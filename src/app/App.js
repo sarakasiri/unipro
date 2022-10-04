@@ -1,13 +1,15 @@
 import './styles/App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Router } from 'react-router-dom';
+import Games from '../containers/games/Games';
 
 
 function App() {
   return (
     <div className="App">
-      <Switch>
-
-      </Switch>
+      <Games />
+      {/* <Router>
+        <Route exact path='/games' component={Games} />
+      </Router> */}
     </div>
   );
 }
