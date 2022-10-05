@@ -1,6 +1,21 @@
-body {
+.loaderContainer {
     background-image: linear-gradient(to right, #8693ab, #425067);
     overflow: hidden;
+    height: auto;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+}
+
+.loaderContainerToggle {
+    transition: 0.2s;
+    height: 0px !important;
+    .loaderBox{
+        display: none;
+    }
 }
 
 .loaderBox {
@@ -10,6 +25,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .LegionLoader {

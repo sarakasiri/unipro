@@ -5,19 +5,19 @@ import classes from './styles/Loader.module.scss';
 import CircleLoader from 'react-spinners/CircleLoader';
 
 
-const Loader = () => {
-    let [loading, setLoading] = useState(true);
-
+const Loader = ({ loader = false }) => {
     return (
-        <div className={classes.loaderBox}>
-            <CircleLoader color={"#CEDFED"} loading={loading} size={175} aria-label="Loading Site" />
-            <div className={classes.LegionLoader}>
-                <span>L</span>
-                <span>E</span>
-                <span>G</span>
-                <span>I</span>
-                <span>O</span>
-                <span>N</span>
+        <div className={`${classes.loaderContainer} ${loader || classes.loaderContainerToggle}`}>
+            <div className={classes.loaderBox}>
+                <CircleLoader color={"#CEDFED"} size={175} aria-label="Loading Site" />
+                <div className={classes.LegionLoader}>
+                    <span>L</span>
+                    <span>E</span>
+                    <span>G</span>
+                    <span>I</span>
+                    <span>O</span>
+                    <span>N</span>
+                </div>
             </div>
         </div>
     );
