@@ -1,0 +1,20 @@
+@font-face {
+	font-family: Dubai_Bold;
+	font-style: normal;
+	font-weight: bold;
+	src: url('../../assets/fonts/Dubai-Bold.otf');
+}
+
+@font-face {
+	font-family: Dubai_Regular;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../../assets/fonts/Dubai-Regular.otf');
+}
+
+@font-face {
+	font-family: Dubai_Light;
+	font-style: normal;
+	font-weight: 500;
+	src: url('../../assets/fonts/Dubai-Light.otf');
+}

@@ -1,0 +1,36 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.Mouse {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 50px;
+    height: 80px;
+    border-radius: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.Mouse:hover {
+    cursor: pointer;
+}
+
+.Mouse::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: scroll 1s infinite alternate;
+    @keyframes scroll {
+        100% {
+            transform: translate(-50%, 25px);
+        }
+    }
+}
