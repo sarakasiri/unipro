@@ -22,15 +22,16 @@ html {
     position: absolute;
     top: 20px;
     left: 50%;
-    transform: translate(-50%, 0);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
+    transform: translate(-50%, -10px);
+    background-image: url('../../../assets/svg/scrollghost.svg');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
     animation: scroll 1s infinite alternate;
     @keyframes scroll {
         100% {
-            transform: translate(-50%, 25px);
+            transform: translate(-50%, 15px);
         }
     }
 }

@@ -21,12 +21,12 @@ import hardship from '../../assets/svg/hardship.svg';
 const Games = () => {
     let [loader, setLoader] = useState(false);
 
-    // useEffect(() => {
-    //     setLoader(true);
-    //     setTimeout(() => {
-    //         setLoader(false);
-    //     }, 3000);
-    // }, []);
+    useEffect(() => {
+        setLoader(true);
+        setTimeout(() => {
+            setLoader(false);
+        }, 3000);
+    }, []);
 
     const updateLightCursor = (e) => {
         let x = e.clientX;
