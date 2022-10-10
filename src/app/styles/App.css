@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+/* custom styles */
+.css-1vpwcmr-MuiGrid-root > .MuiGrid-item {
+  max-width: -webkit-fill-available !important;
+}

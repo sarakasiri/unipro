@@ -1,5 +1,7 @@
 @import url("../../../app/styles/Font.css");
 
+/* section 1 */
+
 .corridorImg {
     cursor: none;
     --cursorX: 50vw;
@@ -31,17 +33,31 @@
     padding: 3rem;
 }
 
+.gameTitleBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .gameTitle .persianTitle {
     font-family: Dubai_Bold !important;
     font-weight: 900 !important;
-    font-size: 2.3rem;
+    font-size: 2rem;
 }
 
-.gameTitle .englishTitle {
+.englishTitle {
+    line-height: 1;
     text-transform: uppercase;
     font-weight: 900 !important;
     font-family: "Work Sans", sans-serif !important;
-    font-size: 2.3rem;
+    position: absolute;
+    font-size: 3rem;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    color: rgba(255, 255, 255, 0.2);
 }
 
 .gameTitle .persianTitle2 {
@@ -53,11 +69,14 @@
     width: 100%;
 }
 
+/* section 1 */
+/*section 2 */
+
 .aboutGame {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-image: linear-gradient(to right bottom, #2e4d7b, #295481, #2d2137);
+    background-image: linear-gradient(93.4deg, #242946 16.97%, #131522 86.4%);
 }
 
 .blubBackground {
@@ -146,3 +165,154 @@
 .levelPercent {
     color: #fefefe;
 }
+
+/* section 2 */
+/* section 3 */
+
+.gmaeLocation {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(93.4deg, #242946 16.97%, #131522 86.4%);
+}
+
+.blubBackgrounButton {
+    position: absolute;
+    transform: rotate(180deg);
+    bottom: 0;
+    right: -2rem;
+}
+
+.locationImage {
+    position: absolute;
+    width: 40rem;
+    bottom: 0%;
+    right: 0%;
+    transform: translate(-7%, -7%);
+    // animation: scroll 5s infinite alternate;
+    @keyframes scroll {
+        0% {
+            transform: rotate(3deg);
+        }
+        50% {
+            transform: rotate(-3deg);
+        }
+        100% {
+            transform: rotate(3deg);
+        }
+    }
+}
+
+.loactionGameBox {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    min-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(180, 180, 180, 0.2) !important;
+    border-radius: 1rem !important;
+    position: relative;
+    padding: 1rem 2rem 2rem 2rem;
+    min-width: 30rem;
+    font-family: Dubai_Regular !important;
+    text-align: justify;
+    direction: rtl;
+}
+
+.locationLogo {
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 900 !important;
+    font-family: "Work Sans", sans-serif !important;
+    position: absolute;
+    font-size: 3rem;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.location span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    direction: rtl;
+}
+
+.locationIcon {
+    width: 3rem;
+    margin-left: 1rem;
+}
+
+/* section 3 */
+/* section 4 */
+
+.reservation {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* section 4 */
+/* section 5 */
+
+.commentsBg {
+    background-image: url("../../../assets/images/commnetsBg.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.commentsTitleBox {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
+.commentsLogo {
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 900 !important;
+    font-family: "Work Sans", sans-serif !important;
+    position: absolute;
+    font-size: 3rem;
+    left: 50%;
+    transform: translate(-50%, 15%);
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.commentsTitle {
+    font-family: Dubai_Bold !important;
+    color: #fefefe;
+}
+
+.addCommentButton {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-family: Dubai_Regular !important;
+}
+
+/* comments 5 */

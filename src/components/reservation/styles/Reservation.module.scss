@@ -1,0 +1,18 @@
+@import url("../../../app/styles/Font.css");
+
+.reservationBox {
+    box-sizing: border-box;
+    background-color: green;
+    font-family: Dubai_Regular !important;
+    color: white;
+    padding: 0.7rem 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.result {
+    display: none;
+}
