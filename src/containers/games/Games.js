@@ -29,12 +29,12 @@ import metro from '../../assets/svg/metro.svg';
 const Games = () => {
     let [loader, setLoader] = useState(false);
 
-    // useEffect(() => {
-    //     setLoader(true);
-    //     setTimeout(() => {
-    //         setLoader(false);
-    //     }, 3000);
-    // }, []);
+    useEffect(() => {
+        setLoader(true);
+        setTimeout(() => {
+            setLoader(false);
+        }, 3000);
+    }, []);
 
     const updateLightCursor = (e) => {
         let x = e.clientX;
@@ -143,6 +143,7 @@ const Games = () => {
                     </Grid>
                     <Grid item xs={12}>
                         <div className={classes.reservation}>
+                            <Title englishTitle="Reserve" persianTitle="رزرو بازی میراژ" />
                             <Reservation />
                         </div>
                     </Grid>
