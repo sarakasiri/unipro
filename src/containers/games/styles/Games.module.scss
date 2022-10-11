@@ -256,13 +256,18 @@
 /* section 4 */
 
 .reservation {
-    width: 100%;
+    background-image: url("../../../assets/images/reservationBG.jpg");
+    background-repeat: no-repeat;
     height: 100vh;
-    position: relative;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 /* section 4 */

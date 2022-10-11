@@ -1,0 +1,25 @@
+@import url("../../../app/styles/Font.css");
+
+.titleBox {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
+.englishTitle {
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 900 !important;
+    font-family: "Work Sans", sans-serif !important;
+    position: absolute;
+    font-size: 3rem;
+    left: 50%;
+    transform: translate(-50%, 15%);
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.persianTitle {
+    font-family: Dubai_Bold !important;
+    color: #fefefe;
+}

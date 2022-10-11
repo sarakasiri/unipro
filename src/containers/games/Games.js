@@ -16,6 +16,7 @@ import BorderButton from '../../components/button/BorderButton';
 import MouseHeader from '../../components/mouse/MouseHeader';
 import UserComments from '../../components/userComments/UserComments';
 import Reservation from '../../components/reservation/Reservation';
+import Title from '../../components/title/Title';
 
 import corridor from '../../assets/images/scary-corridor.png';
 import mirage_cover from '../../assets/images/mirage_cover.png';
@@ -154,12 +155,13 @@ const Games = () => {
                     </Grid>
                     <Grid item xs={12}>
                         <div className={classes.commentsBg}>
-                            <div className={classes.commentsTitleBox}>
+                            <Title englishTitle="Comments" persianTitle="نظرات کاربران میراژ" />
+                            {/* <div className={classes.commentsTitleBox}>
                                 <span className={classes.commentsLogo}>
-                                    Comments
+                                    
                                 </span>
-                                <h2 className={classes.commentsTitle}>نظرات کاربران میراژ</h2>
-                            </div>
+                                <h2 className={classes.commentsTitle}></h2>
+                            </div> */}
                             <AliceCarousel
                                 disableDotsControls
                                 disableButtonsControls
