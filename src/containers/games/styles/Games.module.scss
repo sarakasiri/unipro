@@ -62,6 +62,7 @@
 
 .gameTitle .persianTitle2 {
     font-size: 1.3rem;
+    margin-top: 5rem;
 }
 
 .sectionBoxImage {
@@ -121,21 +122,11 @@
     direction: rtl;
 }
 
-.senarioLogo {
-    line-height: 1;
-    text-transform: uppercase;
-    font-weight: 900 !important;
-    font-family: "Work Sans", sans-serif !important;
-    position: absolute;
-    font-size: 3rem;
-    left: 50%;
-    transform: translate(-50%, 30%);
-    color: rgba(255, 255, 255, 0.1);
-}
-
-.senario h1 {
-    font-family: Dubai_Bold !important;
-    z-index: 2;
+.senarioContent {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .infoGame {
@@ -189,18 +180,6 @@
     bottom: 0%;
     right: 0%;
     transform: translate(-7%, -7%);
-    // animation: scroll 5s infinite alternate;
-    @keyframes scroll {
-        0% {
-            transform: rotate(3deg);
-        }
-        50% {
-            transform: rotate(-3deg);
-        }
-        100% {
-            transform: rotate(3deg);
-        }
-    }
 }
 
 .loactionGameBox {
@@ -228,16 +207,8 @@
     direction: rtl;
 }
 
-.locationLogo {
-    line-height: 1;
-    text-transform: uppercase;
-    font-weight: 900 !important;
-    font-family: "Work Sans", sans-serif !important;
-    position: absolute;
-    font-size: 3rem;
-    left: 50%;
-    transform: translate(-50%, 30%);
-    color: rgba(255, 255, 255, 0.1);
+.address {
+    margin-top: 3rem;
 }
 
 .location span {
@@ -286,30 +257,6 @@
     align-items: center;
     justify-content: center;
     position: relative;
-}
-
-.commentsTitleBox {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 10%);
-}
-
-.commentsLogo {
-    line-height: 1;
-    text-transform: uppercase;
-    font-weight: 900 !important;
-    font-family: "Work Sans", sans-serif !important;
-    position: absolute;
-    font-size: 3rem;
-    left: 50%;
-    transform: translate(-50%, 15%);
-    color: rgba(255, 255, 255, 0.1);
-}
-
-.commentsTitle {
-    font-family: Dubai_Bold !important;
-    color: #fefefe;
 }
 
 .addCommentButton {

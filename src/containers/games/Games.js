@@ -70,9 +70,8 @@ const Games = () => {
                             <MouseHeader target="section1" />
                             <div className={classes.gameTitle}>
                                 <div className={classes.gameTitleBox}>
-                                    <span className={classes.englishTitle}>Mirage</span>
-                                    <span className={classes.persianTitle}>میراژ</span>
-                                    <span className={`${classes.persianTitle} ${classes.persianTitle2}`}>اتاق فراری ترسناک و هیجان انگیز</span>
+                                    <Title englishTitle="Mirage" persianTitle="میراژ" />
+                                    <span className={classes.persianTitle2}>اتاق فراری ترسناک و هیجان انگیز</span>
                                 </div>
                             </div>
                         </div>
@@ -96,16 +95,13 @@ const Games = () => {
                             </svg>
                             <div className={classes.aboutGameBox}>
                                 <Card className={classes.senario}>
-                                    <span className={classes.senarioLogo}>
-                                        Senario
-                                    </span>
-                                    <h1>
-                                        سناریو بازی
-                                    </h1>
-                                    <span>
-                                        شما موفق شدین در مزایده ای که بانک برگزار کرده، برنده ی خانه ای متروکه بشین. پس از ورود به داخل خانه، متوجه میشین خانواده ای که قبلا در این خانه سکونت داشتن، دچار سرنوشت عجیبی شدن، سرنوشتی که شماهم درگیر اون میشین...
-                                    </span>
-                                    <AnimationButton data_hover="رزور" data_button="برای رزرو کلیک کنید!" />
+                                    <Title englishTitle="Senario" persianTitle="سناریو بازی" />
+                                    <div className={classes.senarioContent}>
+                                        <span>
+                                            شما موفق شدین در مزایده ای که بانک برگزار کرده، برنده ی خانه ای متروکه بشین. پس از ورود به داخل خانه، متوجه میشین خانواده ای که قبلا در این خانه سکونت داشتن، دچار سرنوشت عجیبی شدن، سرنوشتی که شماهم درگیر اون میشین...
+                                        </span>
+                                        <AnimationButton data_hover="رزور" data_button="برای رزرو کلیک کنید!" />
+                                    </div>
                                 </Card>
                                 <div className={classes.infoGame}>
                                     <div className={classes.hardshipLevel}>
@@ -132,18 +128,15 @@ const Games = () => {
                             <LazyLoadImage src={location} className={classes.locationImage} />
                             <div className={classes.loactionGameBox}>
                                 <Card className={classes.location}>
-                                    <span className={classes.locationLogo}>
-                                        Location
-                                    </span>
-                                    <h1>
-                                        محل بازی
-                                    </h1>
-                                    <span>
-                                        <LazyLoadImage src={metro} className={classes.locationIcon} /> نزدیک به ایستگاه مترو چیتگر
-                                    </span>
-                                    <span>
-                                        <LazyLoadImage src={locationSVG} className={classes.locationIcon} /> تهران - چیتگر - بلوار کوهک - پلاک ۱۳
-                                    </span>
+                                    <Title englishTitle="Location" persianTitle=" محل بازی" />
+                                    <div className={classes.address}>
+                                        <span>
+                                            <LazyLoadImage src={metro} className={classes.locationIcon} /> نزدیک به ایستگاه مترو چیتگر
+                                        </span>
+                                        <span>
+                                            <LazyLoadImage src={locationSVG} className={classes.locationIcon} /> تهران - چیتگر - بلوار کوهک - پلاک ۱۳
+                                        </span>
+                                    </div>
                                 </Card>
                             </div>
                         </div>
@@ -156,12 +149,6 @@ const Games = () => {
                     <Grid item xs={12}>
                         <div className={classes.commentsBg}>
                             <Title englishTitle="Comments" persianTitle="نظرات کاربران میراژ" />
-                            {/* <div className={classes.commentsTitleBox}>
-                                <span className={classes.commentsLogo}>
-                                    
-                                </span>
-                                <h2 className={classes.commentsTitle}></h2>
-                            </div> */}
                             <AliceCarousel
                                 disableDotsControls
                                 disableButtonsControls
