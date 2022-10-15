@@ -2,9 +2,9 @@ import React from 'react';
 
 import classes from './styles/Title.module.scss';
 
-const Title = ({ englishTitle, persianTitle }) => {
+const Title = ({ englishTitle, persianTitle, absolutePosition = true }) => {
     return (
-        <div className={classes.titleBox}>
+        <div className={classes.titleBox} style={{ position: absolutePosition ? 'absolute' : 'relative' }}>
             <span className={classes.englishTitle}>
                 {englishTitle}
             </span>

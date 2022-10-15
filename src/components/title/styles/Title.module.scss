@@ -8,6 +8,7 @@
 }
 
 .englishTitle {
+    width: max-content;
     line-height: 1;
     text-transform: uppercase;
     font-weight: 900 !important;
@@ -22,4 +23,5 @@
 .persianTitle {
     font-family: Dubai_Bold !important;
     color: #fefefe;
+    width: max-content;
 }

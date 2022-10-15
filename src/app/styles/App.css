@@ -41,3 +41,12 @@
 .css-1vpwcmr-MuiGrid-root > .MuiGrid-item {
   max-width: -webkit-fill-available !important;
 }
+
+.css-10mg1vw-MuiStepper-root {
+  direction: rtl !important;
+}
+
+.css-zpcwqm-MuiStepConnector-root {
+  right: calc(-50% + 20px) !important;
+  left: calc(50% + 20px) !important;
+}
