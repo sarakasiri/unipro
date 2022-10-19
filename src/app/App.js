@@ -1,15 +1,18 @@
 import './styles/App.css';
-import { Route, Router } from 'react-router-dom';
+
+import { Routes, Route } from 'react-router-dom';
+
 import Games from '../containers/games/Games';
+import Home from '../containers/home/Home';
 
 
 function App() {
   return (
     <div className="App">
-      <Games />
-      {/* <Router>
-        <Route exact path='/games' component={Games} />
-      </Router> */}
+      <Routes>
+        <Route exact path='/' element={<Home/>} />
+        <Route exact path='/mirageGame' element={<Games/>} />
+      </Routes>
     </div>
   );
 }

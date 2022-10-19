@@ -1,5 +1,9 @@
 @import url("../../../app/styles/Font.css");
 
+.main {
+    position: relative;
+}
+
 /* section 1 */
 
 .corridorImg {
@@ -7,6 +11,7 @@
     --cursorX: 50vw;
     --cursorY: 50vh;
     height: 100vh;
+    position: relative;
 }
 
 .corridorImg:before {

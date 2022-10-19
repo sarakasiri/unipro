@@ -2,9 +2,9 @@ import React from 'react';
 
 import classes from './styles/Button.module.scss';
 
-const BorderButton = ({ value }) => {
+const BorderButton = ({ value, clickEvent }) => {
     return (
-        <button className={classes.BorderButton}>
+        <button onClick={clickEvent} className={classes.BorderButton}>
             <span>{value}</span>
         </button>
     );

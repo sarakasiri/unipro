@@ -1,0 +1,197 @@
+@import url("../../../app/styles/Font.css");
+
+.main {
+    position: relative;
+}
+
+/* section 1 */
+
+.legionBox {
+    height: 100vh;
+    background: #252525;
+    overflow: hidden;
+    background-image: url("../../../assets/images/commnetsBg.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.wave {
+    width: 100%;
+    height: auto;
+}
+
+.logo {
+    position: absolute;
+    bottom: 45%;
+    right: 15%;
+    width: 30rem;
+    height: 30rem;
+    transform: translate(50%, 50%);
+    z-index: 3;
+}
+
+.titleBox {
+    position: absolute;
+    z-index: 3;
+    width: max-content;
+    height: max-content;
+    top: 40%;
+    left: 15%;
+    transform: translate(-50%, -10%);
+}
+
+.box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.description {
+    margin-top: 5rem;
+    color: #fff;
+    font-size: 1rem;
+    font-family: Dubai_Regular !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description span {
+    line-height: 3rem;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* section 1 */
+/* section 2 */
+
+.videoContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.videoContainer video {
+    width: 100%;
+    height: 100%;
+}
+
+/* section 2*/
+/* section 3 */
+
+.birthDayBox {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    background-image: linear-gradient(93.4deg, #242946 16.97%, #131522 86.4%);
+}
+
+.contentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.BirthDayIMG {
+    position: absolute;
+    top: -2%;
+    right: -7%;
+    transform: rotate(40deg);
+    width: 30rem;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+.cakeIMG {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 13rem;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+.baloonIMG {
+    position: absolute;
+    bottom: -2%;
+    left: 2%;
+    width: 25rem;
+    animation: baloon 2s infinite linear;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+@keyframes baloon {
+    50% {
+        bottom: 0%;
+    }
+}
+
+/* section 3 */
+/* section 4 */
+
+.aboutUs {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image: url("../../../assets/images/aboutUs.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.aboutUsBox {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    min-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactUsBox {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    min-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutUsCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(180, 180, 180, 0.2) !important;
+    border-radius: 1rem !important;
+    position: relative;
+    padding: 1rem 2rem 2rem 2rem;
+    min-width: 30rem;
+    font-family: Dubai_Regular !important;
+    text-align: justify;
+    direction: rtl;
+}
+
+.Icon{
+    margin-left: 1rem;
+}
+
+/* section 4 */

@@ -1,0 +1,35 @@
+@import url("../../../app/styles/Font.css");
+
+.dialogTitle {
+    text-align: center;
+    font-size: Dubai_Bold !important;
+}
+
+.dialogContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+// .dialogContent .TextField{
+//     margin-top: 2rem;
+//     direction: rtl;
+// }
+
+// .dialogContent .TextField label{
+//     left: unset !important;
+//     right: 0;
+//     transform: translate(-14px, 16px) scale(1) !important;
+// }
+
+
+.dialogActions {
+    flex-direction: row-reverse;
+    font-size: Dubai_Light !important;
+}
+
+.dialogButton {
+    color: #212121 !important;
+    font-size: Dubai_Light !important;
+}

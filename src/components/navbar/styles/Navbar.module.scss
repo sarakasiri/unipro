@@ -1,96 +1,17 @@
-.navbarHeader {
-    background-color: #ffffff !important;
-    color: black !important;
-}
-
-.toolBarNavbar {
-    min-height: fit-content !important;
-    justify-content: space-between !important;
-    flex-direction: row-reverse;
-}
-
-.navbar {
-    width: 70rem;
+.appBar {
     display: flex;
-    justify-content: center;
-    flex-direction: row-reverse;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1rem;
-    border-radius: 0px 0px 0.8rem 0.8rem;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.logo {
     position: absolute;
-    z-index: 1;
-    background: inherit;
-    overflow: visible;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
+    width: 30px;
+    align-items: center;
 }
 
-.navbar:before {
-    content: "";
-    position: absolute;
-    background: inherit;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-    filter: blur(10px);
-    margin: -20px;
-}
-
-.navbarListRight {
-    display: flex;
-    justify-content: space-between;
-    justify-self: flex-start;
-    direction: rtl;
-    float: right;
-    width: 40%;
-    margin-right: 0;
-    margin-left: auto;
-}
-
-.navbarLogo {
-    width: 6rem;
-    height: 6rem;
-    top: -1rem;
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0.7rem;
-    border-radius: 50%;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-    position: absolute;
-    z-index: 3;
-    background: inherit;
-    overflow: hidden;
-}
-
-.navbarLogo:before {
-    content: "";
-    position: absolute;
-    background: inherit;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-    filter: blur(10px);
-    margin: -20px;
-}
-
-.navbarListLeft{
-    display: flex;
-    justify-content: space-between;
-    justify-self: flex-end;
-    direction: ltr;
-    float: left;
-    width: 40%;
-    margin-right: auto;
-    margin-left: 0;
+.menuItem {
+    padding-left: 200px;
 }

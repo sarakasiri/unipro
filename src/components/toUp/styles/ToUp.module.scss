@@ -1,0 +1,40 @@
+.toUpBox {
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    bottom: 3%;
+    left: 2%;
+    background: rgba(150, 150, 150, 0.2);
+    z-index: 100;
+    transition: 0.8s;
+    overflow: hidden;
+    display: none;
+}
+
+.toUpBox:hover {
+    cursor: pointer;
+    background: rgba(180, 180, 180, 0.4);
+    .arrowIcon {
+        animation: arrow 2s;
+    }
+}
+
+.Box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.arrowIcon {
+    position: absolute;
+    bottom: 0%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+@keyframes arrow {
+    100% {
+        transform: translate(50%, -80%);
+    }
+}

@@ -11,14 +11,17 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 import Loader from '../../components/loader/Loader';
+import Navbar from '../../components/navbar/Navbar';
 import AnimationButton from '../../components/button/AnimationButton';
 import BorderButton from '../../components/button/BorderButton';
 import MouseHeader from '../../components/mouse/MouseHeader';
 import UserComments from '../../components/userComments/UserComments';
 import Reservation from '../../components/reservation/Reservation';
 import Title from '../../components/title/Title';
+import ToUp from '../../components/toUp/ToUp';
+import AddComment from '../../components/addComment/AddComment';
 
-import corridor from '../../assets/images/scary-corridor.png';
+import corridor from '../../assets/images/corridor3.jpg';
 import mirage_cover from '../../assets/images/mirage_cover.png';
 import location from '../../assets/images/location.png';
 import ghost from '../../assets/svg/ghost.svg';
@@ -28,6 +31,7 @@ import metro from '../../assets/svg/metro.svg';
 
 const Games = () => {
     let [loader, setLoader] = useState(false);
+    let [addCommentOpen, setAddCommentOpen] = useState(false)
 
     useEffect(() => {
         setLoader(true);
@@ -35,6 +39,10 @@ const Games = () => {
             setLoader(false);
         }, 3000);
     }, []);
+
+    const addCommentCloseHandler = () => {
+        setAddCommentOpen(!addCommentOpen);
+    };
 
     const updateLightCursor = (e) => {
         let x = e.clientX;
@@ -62,7 +70,10 @@ const Games = () => {
     return (
         <>
             <Loader loader={loader} />
+            <AddComment isOpen={addCommentOpen} setOpenHandler={addCommentCloseHandler} />
+            <Navbar />
             <div className={classes.main}>
+                <ToUp />
                 <Grid container direction="column">
                     <Grid item xs={12}>
                         <div className={classes.corridorImg} id='corridorImg'>
@@ -163,7 +174,7 @@ const Games = () => {
                                 items={items}
                             />
                             <div className={classes.addCommentButton} >
-                                <BorderButton value="ثبت نظر" />
+                                <BorderButton clickEvent={addCommentCloseHandler} value="ثبت نظر" />
                             </div>
                         </div>
                     </Grid>
