@@ -12,17 +12,9 @@
     justify-content: center;
 }
 
-// .dialogContent .TextField{
-//     margin-top: 2rem;
-//     direction: rtl;
-// }
-
-// .dialogContent .TextField label{
-//     left: unset !important;
-//     right: 0;
-//     transform: translate(-14px, 16px) scale(1) !important;
-// }
-
+.dialogContent .TextField{
+    margin-top: 2rem;
+}
 
 .dialogActions {
     flex-direction: row-reverse;
@@ -32,4 +24,15 @@
 .dialogButton {
     color: #212121 !important;
     font-size: Dubai_Light !important;
+}
+
+.ratingBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.ratingTitle {
+    margin-left: 1rem;
 }

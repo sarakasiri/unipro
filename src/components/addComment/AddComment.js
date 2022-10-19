@@ -10,6 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
 import TextField from '@mui/material/TextField';
+import Rating from '@mui/material/Rating';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -66,7 +67,11 @@ const AddComment = ({ isOpen = false, setOpenHandler }) => {
                         <ThemeProvider theme={rtltheme}>
                             <div dir="rtl">
                                 <TextField className={classes.TextField} value={formData.name} id="outlined-basic" label="نام و نام خانوادگی" fullWidth />
-                                <TextField className={classes.TextField} value={formData.opinion} id="outlined-multiline-flexible" multiline maxRows={4} label="نظر" fullWidth />
+                                <TextField className={classes.TextField} value={formData.opinion} id="outlined-multiline-flexible" multiline rows={3} maxRows={3} label="نظر" fullWidth />
+                                <div className={classes.ratingBox}>
+                                    <span className={classes.ratingTitle}>رتبه شما: </span>
+                                    <Rating name="game-rating" defaultValue={2.5} precision={0.5} />
+                                </div>
                             </div>
                         </ThemeProvider>
                     </CacheProvider>
