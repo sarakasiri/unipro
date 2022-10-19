@@ -1,17 +1,87 @@
-.appBar {
-    display: flex;
-    position: relative;
+.appBarContainer {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translate(-50%, 0%);
+    background-color: rgba(150, 150, 150, 0.2) !important;
+    border-bottom: 1px solid #fefefe;
+    max-width: 70% !important;
+    box-shadow: unset !important;
+    padding: 0rem 1rem 0rem 1rem !important;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 }
 
-.logo {
+.toolBarBox {
+    width: 100% !important;
+    min-height: 3.5rem !important;
+}
+
+.menuItemBox {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 30%;
+    margin-left: auto;
+}
+
+.menuItemLink {
+    color: #fefefe !important;
+    text-decoration: none !important;
+}
+
+.menuItemLink::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: #fefefe;
+    transform: scaleX(0);
+    transition: 0.5s;
+    margin-top: 0.4rem;
+}
+
+.menuItemLink:hover::after {
+    transform: scaleX(1);
+}
+
+.menuIconBox {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 15%;
+    margin-right: auto;
+}
+
+.menuIconBtn {
+    min-width: fit-content !important;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    color: #fefefe;
+}
+
+.socialIcon {
+    color: #fefefe;
+}
+
+.logoBox {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background-color: #fefefe;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
+    right: 50%;
+    bottom: 0%;
+    transform: translate(50%, 50%);
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.menuItem {
-    padding-left: 200px;
+.logo {
+    width: 2.8rem;
+    align-items: center;
 }
