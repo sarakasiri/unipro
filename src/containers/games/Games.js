@@ -12,6 +12,7 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 
 import Loader from '../../components/loader/Loader';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import AnimationButton from '../../components/button/AnimationButton';
 import BorderButton from '../../components/button/BorderButton';
 import MouseHeader from '../../components/mouse/MouseHeader';
@@ -180,6 +181,7 @@ const Games = () => {
                     </Grid>
                 </Grid>
             </div>
+            <Footer/>
         </>
     );
 };

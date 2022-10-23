@@ -38,6 +38,11 @@
 }
 
 /* custom styles */
+
+body {
+  overflow-x: hidden !important;
+}
+
 .css-1vpwcmr-MuiGrid-root > .MuiGrid-item {
   max-width: -webkit-fill-available !important;
 }

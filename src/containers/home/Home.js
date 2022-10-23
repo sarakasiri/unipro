@@ -13,6 +13,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Loader from '../../components/loader/Loader';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import Title from '../../components/title/Title';
 import VideoScroll from '../../components/video/Video';
 import ToUp from '../../components/toUp/ToUp';
@@ -112,6 +113,7 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </div>
+            <Footer/>
         </>
     );
 };
