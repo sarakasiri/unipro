@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import NeshanMap from 'react-neshan-map-leaflet'
 
 const Location = () => {
     const [latitude, setLatitude] = useState(35.6892)
@@ -8,14 +8,13 @@ const Location = () => {
     const [zoom, setZoom] = useState(10)
 
     return (
-        <ReactMapGL width="100%" height={400} latitude={latitude} longitude={longitude} zoom={zoom} mapStyle='mapbox://styles/mapbox/streets-v11'
-            mapboxApiAccessToken="YourToken"
-            onViewportChange={(viewState) => {
-                setLatitude(viewState.latitude);
-                setLongitude(viewState.longitude);
-                setZoom(viewState.zoom)
-            }}>
-        </ReactMapGL>
+        <NeshanMap
+            options={{
+                key: 'YOUR_API_KEY',
+                center: [35.699739, 51.338097],
+                zoom: 13
+            }}
+        />
     );
 };
 

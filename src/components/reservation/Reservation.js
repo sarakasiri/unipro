@@ -26,7 +26,11 @@ const Reservation = () => {
             if (node.nodeName === "SPAN") {
                 node = e.target.parentElement;
             };
-            node.style.width = "55rem";
+            if (window.innerWidth <= 950){
+                node.style.width = "90%";
+            }else{
+                node.style.width = "55rem";
+            }
             setTimeout(() => { node.style.height = "30rem"; }, 1000);
             setTimeout(() => { node.style.background = "rgba(180,180,180,0.2)"; }, 2000);
             node.style.marginTop = "3rem";

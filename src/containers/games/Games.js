@@ -5,8 +5,10 @@ import classes from './styles/Games.module.scss';
 import Grid from '@mui/material/Grid/Grid';
 import Card from '@mui/material/Card/Card';
 import CircularProgress from '@mui/material/CircularProgress';
+import Hidden from '@mui/material/Hidden';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import NeshanMap from 'react-neshan-map-leaflet';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -22,7 +24,7 @@ import Title from '../../components/title/Title';
 import ToUp from '../../components/toUp/ToUp';
 import AddComment from '../../components/addComment/AddComment';
 
-import corridor from '../../assets/images/corridor3.jpg';
+import corridor from '../../assets/images/corridor.png';
 import mirage_cover from '../../assets/images/mirage_cover.png';
 import location from '../../assets/images/location.png';
 import ghost from '../../assets/svg/ghost.svg';
@@ -41,8 +43,12 @@ const Games = () => {
         }, 3000);
     }, []);
 
+    const addCommentOpenHandler = () => {
+        setAddCommentOpen(true);
+    };
+
     const addCommentCloseHandler = () => {
-        setAddCommentOpen(!addCommentOpen);
+        setAddCommentOpen(false);
     };
 
     const updateLightCursor = (e) => {
@@ -71,7 +77,6 @@ const Games = () => {
     return (
         <>
             <Loader loader={loader} />
-            <AddComment isOpen={addCommentOpen} setOpenHandler={addCommentCloseHandler} />
             <Navbar />
             <div className={classes.main}>
                 <ToUp />
@@ -79,7 +84,7 @@ const Games = () => {
                     <Grid item xs={12}>
                         <div className={classes.corridorImg} id='corridorImg'>
                             <LazyLoadImage src={corridor} alt="" className={classes.sectionBoxImage} />
-                            <MouseHeader target="section1" />
+                            <MouseHeader target="senario" />
                             <div className={classes.gameTitle}>
                                 <div className={classes.gameTitleBox}>
                                     <Title englishTitle="Mirage" persianTitle="میراژ" />
@@ -89,7 +94,7 @@ const Games = () => {
                         </div>
                     </Grid>
                     <Grid item xs={12}>
-                        <div className={classes.aboutGame} id="section1">
+                        <div className={classes.aboutGame} id="senario">
                             <svg className={classes.blubBackground} id="visual" viewBox="0 0 900 675" width="900" height="675" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
                                 <g transform="translate(-57.92425895179775 25.01438341407942)">
                                     <path fill="black" d="M168.8 -305.9C247.6 -246.9 360.2 -259.9 450.2 -221C540.2 -182 607.6 -91 607 -0.3C606.5 90.3 537.9 180.7 478.9 273.3C419.9 366 370.5 461 292.2 466C214 471 107 386 12.9 363.6C-81.2 341.3 -162.3 381.5 -198.9 352.4C-235.4 323.4 -227.3 225 -251.1 154.7C-274.8 84.4 -330.4 42.2 -390.3 -34.6C-450.2 -111.3 -514.3 -222.7 -482.9 -279.7C-451.5 -336.7 -324.5 -339.4 -228.1 -388.2C-131.7 -437.1 -65.8 -532 -10.4 -514C45 -495.9 90 -364.9 168.8 -305.9"></path>
@@ -112,17 +117,17 @@ const Games = () => {
                                         <span>
                                             شما موفق شدین در مزایده ای که بانک برگزار کرده، برنده ی خانه ای متروکه بشین. پس از ورود به داخل خانه، متوجه میشین خانواده ای که قبلا در این خانه سکونت داشتن، دچار سرنوشت عجیبی شدن، سرنوشتی که شماهم درگیر اون میشین...
                                         </span>
-                                        <AnimationButton data_hover="رزور" data_button="برای رزرو کلیک کنید!" />
+                                        <AnimationButton data_hover="رزور" data_button="برای رزرو کلیک کنید!" target="reserve" />
                                     </div>
                                 </Card>
                                 <div className={classes.infoGame}>
                                     <div className={classes.hardshipLevel}>
-                                        <CircularProgress variant="determinate" value={91} size={100} />
+                                        <CircularProgress className={classes.circleProgress} variant="determinate" value={91} size={100} />
                                         <LazyLoadImage src={hardship} className={classes.levelIcon} />
                                         درجه سختی: <span className={classes.levelPercent}>95%</span>
                                     </div>
                                     <div className={classes.fearLevel}>
-                                        <CircularProgress variant="determinate" value={95} size={100} />
+                                        <CircularProgress className={classes.circleProgress} variant="determinate" value={95} size={100} />
                                         <LazyLoadImage src={ghost} className={classes.levelIcon} />
                                         درجه ترس: <span className={classes.levelPercent}>95%</span>
                                     </div>
@@ -131,7 +136,7 @@ const Games = () => {
                         </div>
                     </Grid>
                     <Grid item xs={12}>
-                        <div className={classes.gmaeLocation}>
+                        <div className={classes.gmaeLocation} id="location">
                             <svg className={classes.blubBackgrounButton} id="visual" viewBox="0 0 900 675" width="900" height="675" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1">
                                 <g transform="translate(-57.92425895179775 25.01438341407942)">
                                     <path fill="black" d="M168.8 -305.9C247.6 -246.9 360.2 -259.9 450.2 -221C540.2 -182 607.6 -91 607 -0.3C606.5 90.3 537.9 180.7 478.9 273.3C419.9 366 370.5 461 292.2 466C214 471 107 386 12.9 363.6C-81.2 341.3 -162.3 381.5 -198.9 352.4C-235.4 323.4 -227.3 225 -251.1 154.7C-274.8 84.4 -330.4 42.2 -390.3 -34.6C-450.2 -111.3 -514.3 -222.7 -482.9 -279.7C-451.5 -336.7 -324.5 -339.4 -228.1 -388.2C-131.7 -437.1 -65.8 -532 -10.4 -514C45 -495.9 90 -364.9 168.8 -305.9"></path>
@@ -151,37 +156,89 @@ const Games = () => {
                                     </div>
                                 </Card>
                             </div>
+                            {/* <NeshanMap
+                                options={{
+                                    key: 'web.51b9a0b22934458985b60079e219e7c6',
+                                    center: [35.699739, 51.338097],
+                                    zoom: 13
+                                }}
+                            /> */}
                         </div>
                     </Grid>
                     <Grid item xs={12}>
-                        <div className={classes.reservation}>
+                        <div className={classes.reservation} id="reserve">
                             <Title englishTitle="Reserve" persianTitle="رزرو بازی میراژ" />
                             <Reservation />
                         </div>
                     </Grid>
                     <Grid item xs={12}>
-                        <div className={classes.commentsBg}>
+                        <div className={classes.commentsBg} id="comments">
                             <Title englishTitle="Comments" persianTitle="نظرات کاربران میراژ" />
-                            <AliceCarousel
-                                disableDotsControls
-                                disableButtonsControls
-                                animationDuration={4000}
-                                autoPlay
-                                mouseTracking
-                                infinite
-                                responsive={{
-                                    0: { items: 3, },
-                                }}
-                                items={items}
-                            />
+                            <Hidden lgDown>
+                                <AliceCarousel
+                                    disableDotsControls
+                                    disableButtonsControls
+                                    animationDuration={4000}
+                                    autoPlay
+                                    mouseTracking
+                                    infinite
+                                    responsive={{
+                                        0: { items: 4, },
+                                    }}
+                                    items={items}
+                                />
+                            </Hidden>
+                            <Hidden mdDown lgUp>
+                                <AliceCarousel
+                                    disableDotsControls
+                                    disableButtonsControls
+                                    animationDuration={4000}
+                                    autoPlay
+                                    mouseTracking
+                                    infinite
+                                    responsive={{
+                                        0: { items: 3, },
+                                    }}
+                                    items={items}
+                                />
+                            </Hidden>
+                            <Hidden smDown mdUp>
+                                <AliceCarousel
+                                    disableDotsControls
+                                    disableButtonsControls
+                                    animationDuration={4000}
+                                    autoPlay
+                                    mouseTracking
+                                    infinite
+                                    responsive={{
+                                        0: { items: 2, },
+                                    }}
+                                    items={items}
+                                />
+                            </Hidden>
+                            <Hidden smUp>
+                                <AliceCarousel
+                                    disableDotsControls
+                                    disableButtonsControls
+                                    animationDuration={4000}
+                                    autoPlay
+                                    mouseTracking
+                                    infinite
+                                    responsive={{
+                                        0: { items: 1, },
+                                    }}
+                                    items={items}
+                                />
+                            </Hidden>
                             <div className={classes.addCommentButton} >
-                                <BorderButton clickEvent={addCommentCloseHandler} value="ثبت نظر" />
+                                <BorderButton clickEvent={addCommentOpenHandler} value="ثبت نظر" />
+                                <AddComment isOpen={addCommentOpen} closeHandeler={addCommentCloseHandler} />
                             </div>
                         </div>
                     </Grid>
                 </Grid>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };

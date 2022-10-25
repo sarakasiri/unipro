@@ -5,6 +5,8 @@ import './index.css';
 import App from './app/App';
 import reportWebVitals from './app/reportWebVitals';
 
+console.log(process.env.MAP_API_KEY);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

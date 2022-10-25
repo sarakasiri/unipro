@@ -3,15 +3,15 @@ import React from 'react';
 import classes from './styles/Button.module.scss';
 
 
-const AnimationButton = ({ data_hover, data_button }) => {
+const AnimationButton = ({ data_hover, data_button, target }) => {
 
     return (
         <>
-            <button className={classes.button} data-hover={data_hover}>
+            <a className={classes.button} data-hover={data_hover} href={`#${target}`}>
                 <div>
                     {data_button}
                 </div>
-            </button>
+            </a>
         </>
     );
 };
