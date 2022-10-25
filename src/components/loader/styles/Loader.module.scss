@@ -1,5 +1,5 @@
 .loaderContainer {
-    background-image: linear-gradient(to right, #8693ab, #425067);
+    background-image: linear-gradient(to right, #4a505b, #1f2328);
     overflow: hidden;
     height: auto;
     height: 100vh;
@@ -41,7 +41,7 @@
     -webkit-transform-style: preserve-3d;
     text-shadow: 2px 1px #000;
     margin-top: 2rem;
-    color: #8693ab;
+    color: #4a505b;
 }
 
 @keyframes flip {
@@ -54,7 +54,7 @@
 }
 
 .LegionLoader > span:nth-child(even) {
-    color: #425067;
+    color: #1f2328;
 }
 
 .LegionLoader > span:nth-child(2) {
@@ -75,4 +75,12 @@
 
 .LegionLoader > span:nth-child(6) {
     animation-delay: 1.5s;
+}
+
+
+/* responsive */
+@media screen and (max-width: 900px) {
+    .LegionLoader span {
+        font-size: 2rem;
+    }
 }

@@ -4,6 +4,7 @@ import classes from './styles/Home.module.scss';
 
 import Grid from '@mui/material/Grid/Grid';
 import Card from '@mui/material/Card/Card';
+import Hidden from '@mui/material/Hidden';
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
@@ -23,6 +24,8 @@ import BirthDay from '../../assets/images/happy_birthday.png';
 import cake from '../../assets/images/cake.png';
 import baloon from '../../assets/images/baloon.png';
 import wave from '../../assets/svg/scene_wave.svg';
+import tablet_wave from '../../assets/svg/scene_tablet_wave.svg';
+import mobile_wave from '../../assets/svg/scene_mobile_wave.svg';
 
 
 const Home = () => {
@@ -44,7 +47,15 @@ const Home = () => {
                 <Grid container direction="column" >
                     <Grid item xs={12}>
                         <div className={classes.legionBox}>
-                            <LazyLoadImage src={wave} alt="wave" className={classes.wave} />
+                            <Hidden lgDown>
+                                <LazyLoadImage src={wave} alt="wave" className={classes.wave} />
+                            </Hidden>
+                            <Hidden mdDown>
+                                <LazyLoadImage src={tablet_wave} alt="wave" className={classes.wave} />
+                            </Hidden>
+                            <Hidden mdUp>
+                                <LazyLoadImage src={mobile_wave} alt="wave" className={classes.wave} />
+                            </Hidden>
                             <LazyLoadImage src={logo} alt="logo" className={classes.logo} />
                             <div className={classes.titleBox}>
                                 <div className={classes.box}>

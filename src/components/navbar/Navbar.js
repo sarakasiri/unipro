@@ -6,12 +6,16 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import MenuIcon from '@mui/icons-material/Menu';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 
 import { Instagram, WhatsApp, Telegram } from '@mui/icons-material';
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link } from 'react-router-dom';
@@ -20,14 +24,14 @@ import logo from '../../assets/images/logoWithOutName.png';
 
 
 const Navbar = () => {
-    const [anchorElNav, setAnchorElNav] = useState(null);
+    const [anchorElNav, setAnchorElNav] = useState(false);
 
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
+    const handleOpenNavMenu = () => {
+        setAnchorElNav(true);
     };
 
     const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
+        setAnchorElNav(false);
     };
 
     const pages = [{
@@ -49,42 +53,42 @@ const Navbar = () => {
     return (
         <AppBar className={classes.appBarContainer}>
             <Toolbar disableGutters className={classes.toolBarBox}>
-                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={handleOpenNavMenu}
-                        color="inherit"
+                <Drawer
+                    anchor='right'
+                    open={anchorElNav}
+                    onClose={handleCloseNavMenu}
+                >
+                    <Box
+                        sx={{ width: 200 }}
+                        role="presentation"
+                        onKeyDown={handleCloseNavMenu}
                     >
-                        <MenuIcon />
-                    </IconButton>
-                    <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorElNav}
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'left',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
-                        open={Boolean(anchorElNav)}
-                        onClose={handleCloseNavMenu}
-                        sx={{
-                            display: { xs: 'block', md: 'none' },
-                        }}>
-
-                        {pages.map((page, index) => (
-                            <MenuItem key={index} onClick={handleCloseNavMenu} >
-                                <Link to={page.link}>{page.title}</Link>
-                            </MenuItem>
-                        ))}
-                    </Menu>
-                </Box>
+                        <List>
+                            <ListItem disablePadding>
+                                <ListItemButton>
+                                    <CloseIcon onClick={handleCloseNavMenu} />
+                                </ListItemButton>
+                            </ListItem>
+                            {pages.map((page, index) => (
+                                <ListItem key={index} disablePadding className={classes.listItemResponsive}>
+                                    <ListItemButton>
+                                        <ListItemText>
+                                            <Link className={classes.linkItemResponsive} to={page.link}>{page.title}</Link>
+                                        </ListItemText>
+                                    </ListItemButton>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Box>
+                </Drawer>
+                <IconButton
+                    size="large"
+                    onClick={handleOpenNavMenu}
+                    color="inherit"
+                    className={classes.humbergerMenuIcon}
+                >
+                    <MenuIcon />
+                </IconButton>
                 <Box className={classes.menuIconBox} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                     {settings.map((setting, index) => (
                         <Button className={classes.menuIconBtn} key={index}>

@@ -25,3 +25,12 @@
     color: #fefefe;
     width: max-content;
 }
+
+@media screen and (max-width: 600px) {
+    .englishTitle {
+        font-size: 2.5rem;
+    }
+    .persianTitle {
+        font-size: 1.5rem;
+    }
+}

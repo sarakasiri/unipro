@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
+import Hidden from '@mui/material/Hidden';
 
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import EmailRounded from '@mui/icons-material/EmailRounded';
@@ -33,7 +34,7 @@ const Footer = () => {
     return (
         <>
             <Grid container direction="row-reverse" className={classes.footeerContainer}>
-                <Grid item xs={4} className={classes.footerItemBox}>
+                <Grid item xs={12} md={4} className={classes.footerItemBox}>
                     <div className={classes.menuBox}>
                         <span className={classes.menuTitle}>
                             منو
@@ -69,20 +70,22 @@ const Footer = () => {
                     </div>
                 </Grid>
                 <Divider orientation="vertical" flexItem className={classes.divider} />
-                <Grid item xs={4} className={classes.footerItemBox}>
+                <Grid item xs={12} md={4} className={classes.footerItemBox}>
                     <div className={classes.magicBox}>
                         <div className={classes.ball}>
                             <LazyLoadImage src={logo} className={classes.logoImage} />
                         </div>
                         <div className={classes.shadow}></div>
                     </div>
-                    <div className={classes.copyrightBox}>
-                        <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لجیون اسکیپ میباشد</span>
-                        <span className={classes.englishText}>©2022-2023 LegionEscape. All Rights Reserved.</span>
-                    </div>
+                    <Hidden mdDown>
+                        <div className={classes.copyrightBox}>
+                            <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لجیون اسکیپ میباشد</span>
+                            <span className={classes.englishText}>©2022-2023 LegionEscape. All Rights Reserved.</span>
+                        </div>
+                    </Hidden>
                 </Grid>
                 <Divider orientation="vertical" flexItem className={classes.divider} />
-                <Grid item xs={4} className={classes.footerItemBox}>
+                <Grid item xs={12} md={4} className={classes.footerItemBox}>
                     <div className={classes.newsletterBox}>
                         <span className={classes.newsletterTitle}>
                             ثبت نام در خبرنامه ایمیلی
@@ -104,6 +107,12 @@ const Footer = () => {
                             </CacheProvider>
                         </form>
                     </div>
+                    <Hidden mdUp>
+                        <div className={classes.copyrightBox}>
+                            <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لجیون اسکیپ میباشد</span>
+                            <span className={classes.englishText}>©2022-2023 LegionEscape. All Rights Reserved.</span>
+                        </div>
+                    </Hidden>
                 </Grid>
             </Grid>
         </>
