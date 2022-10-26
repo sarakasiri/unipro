@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './styles/Mouse.module.scss';
+import classes from './styles/mouse.module.scss';
 
 
 const MouseHeader = ({ target }) => {

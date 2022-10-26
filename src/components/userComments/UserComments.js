@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './styles/UserComments.module.scss';
+import classes from './styles/usercomments.module.scss';
 
 import StarRating from '../starRating/StarRating';
 

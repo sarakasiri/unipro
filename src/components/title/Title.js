@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './styles/Title.module.scss';
+import classes from './styles/title.module.scss';
 
 const Title = ({ englishTitle, persianTitle, absolutePosition = true }) => {
     return (

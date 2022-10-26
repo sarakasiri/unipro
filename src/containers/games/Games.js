@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import classes from './styles/Games.module.scss';
+import classes from './styles/games.module.scss';
 
 import Grid from '@mui/material/Grid/Grid';
 import Card from '@mui/material/Card/Card';

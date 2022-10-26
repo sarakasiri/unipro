@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import classes from './styles/Reservation.module.scss';
+import classes from './styles/reservation.module.scss';
 
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';

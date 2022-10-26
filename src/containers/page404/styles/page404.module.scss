@@ -1,0 +1,205 @@
+.container {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.head {
+  display: block;
+  position: relative;
+  width: 200px;
+  margin: 10% auto 0;
+  animation: shvr 0.2s infinite;
+}
+
+.head::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #000;
+  position: absolute;
+  top: 30px;
+  left: 25px;
+  border-radius: 50%;
+  box-shadow: 125px 0 0 #000;
+  animation: eye 2.5s infinite;
+}
+
+.eye404 {
+  position: relative;
+  display: inline-block;
+  background: #fff;
+  width: 75px;
+  height: 80px;
+  border-radius: 50% 50% 50% 50% / 45px 45px 45% 45%;
+  rotate: 45deg;
+}
+
+.eye404::after {
+  content: "";
+  position: absolute;
+  border-bottom: 2px solid #fff;
+  width: 70px;
+  height: 50px;
+  left: 0px;
+  bottom: -10px;
+  border-radius: 50%;
+}
+
+.eye404::before {
+  bottom: auto;
+  top: -100px;
+  rotate: 45deg;
+  left: 0;
+}
+
+.eye404:nth-of-type(2) {
+  float: right;
+  rotate: -45deg;
+}
+
+.eye404:nth-of-type(2)::after {
+  left: 5px;
+}
+
+.eye404:nth-of-type(3) {
+  display: none;
+}
+
+.body {
+  margin-top: 100px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.description{
+  position: relative;
+  margin-top: 3rem;
+}
+
+.description::before {
+  content: "404";
+  font-size: 80px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.description::after {
+  content: "صفحه پیدا نشد";
+  color: #1ea7ab;
+  width: fit-content;
+  font-size: 30px;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@keyframes eye {
+  0%,
+  30%,
+  55%,
+  90%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10%,
+  25% {
+    transform: translate(0, 20px);
+  }
+  65% {
+    transform: translate(-20px, 0);
+  }
+  80% {
+    transform: translate(20px, 0);
+  }
+}
+
+@keyframes shvr {
+  0% {
+    transform: translate(1px);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-1px);
+  }
+}
+
+
+
+.BorderButton {
+  display: inline-block;
+  position: relative;
+  border: none;
+  color: #f4e8eb;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: rgba(150, 150, 150, 0.3);
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  margin-top: 2rem;
+}
+
+.BorderButton::after,
+.BorderButton::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: rgba(180, 180, 180, 0.8);
+}
+
+.BorderButton:hover::before,
+.BorderButton:hover::after {
+  width: 100%;
+}
+
+.BorderButton::after {
+  right: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+
+.BorderButton::before {
+  left: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+
+.BorderButton span {
+  display: block;
+  padding: 1rem 3rem;
+  width: max-content;
+}
+
+.BorderButton span::before,
+.BorderButton span::after {
+  content: "";
+  width: 2px;
+  height: 0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: rgba(180, 180, 180, 0.8);
+}
+
+.BorderButton:hover span::before,
+.BorderButton:hover span::after {
+  height: 100%;
+}
+
+.BorderButton span::after {
+  right: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+
+.BorderButton span::before {
+  left: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}

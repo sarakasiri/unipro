@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import classes from './styles/Video.module.scss';
+import classes from './styles/video.module.scss';
 
 import videoFile from '../../assets/videos/home.mp4';
 

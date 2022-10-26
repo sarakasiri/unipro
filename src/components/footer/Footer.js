@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './styles/Footer.module.scss';
+import classes from './styles/footer.module.scss';
 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -58,13 +58,13 @@ const Footer = () => {
                         </span>
                         <ul className={classes.menuUl}>
                             <li className={classes.menuItem}>
-                                آدرس:
+                                آدرس: تهران - چیتگر - بلوار کوهک - پلاک ۱۳
                             </li>
                             <li className={classes.menuItem}>
-                                شماره تماس:
+                                شماره تماس: 09389669643 - 09378819116
                             </li>
                             <li className={classes.menuItem}>
-                                اینستاگرام:
+                                اینستاگرام: legionescaperoom
                             </li>
                         </ul>
                     </div>
@@ -79,7 +79,7 @@ const Footer = () => {
                     </div>
                     <Hidden mdDown>
                         <div className={classes.copyrightBox}>
-                            <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لجیون اسکیپ میباشد</span>
+                            <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لژیون اسکیپ میباشد</span>
                             <span className={classes.englishText}>©2022-2023 LegionEscape. All Rights Reserved.</span>
                         </div>
                     </Hidden>
@@ -109,7 +109,7 @@ const Footer = () => {
                     </div>
                     <Hidden mdUp>
                         <div className={classes.copyrightBox}>
-                            <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لجیون اسکیپ میباشد</span>
+                            <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لژیون اسکیپ میباشد</span>
                             <span className={classes.englishText}>©2022-2023 LegionEscape. All Rights Reserved.</span>
                         </div>
                     </Hidden>

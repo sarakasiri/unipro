@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './styles/StarRating.module.scss';
+import classes from './styles/starrating.module.scss';
 
 
 const Star = ({ marked, starId }) => {

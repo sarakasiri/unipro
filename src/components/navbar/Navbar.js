@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import classes from './styles/Navbar.module.scss';
+import classes from './styles/navbar.module.scss';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -40,14 +40,15 @@ const Navbar = () => {
     }, {
         title: "بازی میراژ",
         link: "/mirageGame"
-    }, {
+    }];
+    const external = [{
         title: "وبلاگ",
-        link: "/blog"
+        link: "https://blog.legionescaperoom.ir/"
     }];
     const settings = [
-        <Instagram className={classes.socialIcon} />,
-        <WhatsApp className={classes.socialIcon} />,
-        <Telegram className={classes.socialIcon} />
+        <a target="_blank" rel="noreferrer" href="https://instagram.com/legionescaperoom"><Instagram className={classes.socialIcon} /></a>,
+        <a target="_blank" rel="noreferrer" href="https://wa.me/989366534783"><WhatsApp className={classes.socialIcon} /></a>,
+        <a target="_blank" rel="noreferrer" href="https://t.me/Afshinyahyaei"><Telegram className={classes.socialIcon} /></a>
     ];
 
     return (
@@ -78,6 +79,15 @@ const Navbar = () => {
                                     </ListItemButton>
                                 </ListItem>
                             ))}
+                            {external.map((page, index) => (
+                                <ListItem key={index + pages.length} disablePadding className={classes.listItemResponsive}>
+                                    <ListItemButton>
+                                        <ListItemText>
+                                            <a className={classes.linkItemResponsive} href={page.link}>{page.title}</a>
+                                        </ListItemText>
+                                    </ListItemButton>
+                                </ListItem>
+                            ))}
                         </List>
                     </Box>
                 </Drawer>
@@ -89,7 +99,7 @@ const Navbar = () => {
                 >
                     <MenuIcon />
                 </IconButton>
-                <Box className={classes.menuIconBox} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                <Box className={classes.menuIconBox} sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
                     {settings.map((setting, index) => (
                         <Button className={classes.menuIconBtn} key={index}>
                             {setting}
@@ -104,6 +114,9 @@ const Navbar = () => {
                 <Box className={classes.menuItemBox} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page, index) => (
                         <Link key={index} className={classes.menuItemLink} to={page.link}>{page.title}</Link>
+                    ))}
+                    {external.map((page, index) => (
+                        <a key={index + pages.length} className={classes.menuItemLink} href={page.link}>{page.title}</a>
                     ))}
                 </Box>
 

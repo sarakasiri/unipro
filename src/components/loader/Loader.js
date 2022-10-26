@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './styles/Loader.module.scss';
+import classes from './styles/loader.module.scss';
 
 import CircleLoader from 'react-spinners/CircleLoader';
 

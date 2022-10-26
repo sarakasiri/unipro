@@ -1,4 +1,4 @@
-@import url("../../../app/styles/Font.css");
+@import url("../../../app/styles/font.css");
 
 .main {
     position: relative;
@@ -214,6 +214,10 @@
     width: 25rem;
     animation: baloon 2s infinite linear;
     filter: drop-shadow(0 0 0.75rem black);
+}
+
+.birthdaydesc{
+    align-items: center;
 }
 
 @keyframes baloon {

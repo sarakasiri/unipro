@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './styles/ToUp.module.scss';
+import classes from './styles/toup.module.scss';
 
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Tooltip from '@mui/material/Tooltip';

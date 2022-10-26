@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import classes from './styles/Home.module.scss';
+import classes from './styles/home.module.scss';
 
 import Grid from '@mui/material/Grid/Grid';
 import Card from '@mui/material/Card/Card';
@@ -59,7 +59,7 @@ const Home = () => {
                             <LazyLoadImage src={logo} alt="logo" className={classes.logo} />
                             <div className={classes.titleBox}>
                                 <div className={classes.box}>
-                                    <Title englishTitle="Legion" persianTitle="مجموعه لجیون" />
+                                    <Title englishTitle="Legion" persianTitle="مجموعه لژیون" />
                                     <span className={classes.description}>
                                         طراحی اتاق فرار
                                     </span>
@@ -75,8 +75,8 @@ const Home = () => {
                     <Grid item xs={12}>
                         <div className={classes.birthDayBox}>
                             <div className={classes.contentBox}>
-                                <Title englishTitle="birthday party" persianTitle="مراسم تولد در لجیون اسکیپ" />
-                                <div className={classes.description}>
+                                <Title englishTitle="birthday party" persianTitle="مراسم تولد در لژیون اسکیپ" />
+                                <div className={`${classes.description} ${classes.birthdaydesc}`}>
                                     <span> تولدی جذاب و خاص</span>
                                     <span>تولدی خاص و جذاب را برای دوستانتون رقم بزنید </span>
                                 </div>
@@ -109,13 +109,13 @@ const Home = () => {
                                     <Title englishTitle="Contact Us" persianTitle="ارتباط با ما" />
                                     <div className={classes.description}>
                                         <span>
-                                            <AlternateEmailIcon className={classes.Icon} /> ایمیل: contact@legionescaperoom.ir
+                                            <AlternateEmailIcon className={classes.Icon} /> ایمیل: info@legionescaperoom.ir
                                         </span>
                                         <span>
                                             <ContactPhoneIcon className={classes.Icon} /> شماره تماس: 09389669643 - 09378819116
                                         </span>
                                         <span>
-                                            <InstagramIcon className={classes.Icon} /> اینستاگرام: Legionescaproom
+                                            <InstagramIcon className={classes.Icon} /> اینستاگرام: legionescaperoom
                                         </span>
                                     </div>
                                 </Card>

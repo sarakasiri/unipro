@@ -66,6 +66,13 @@
 
 .socialIcon {
     color: #fefefe;
+    transition: 0.3s;
+}
+
+.socialIcon:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    color: #555555;
 }
 
 .logoBox {

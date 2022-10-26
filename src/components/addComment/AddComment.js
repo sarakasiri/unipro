@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import classes from './styles/AddComment.module.scss';
+import classes from './styles/addcomment.module.scss';
 
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';

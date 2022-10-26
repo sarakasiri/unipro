@@ -1,4 +1,4 @@
-@import url("../../../app/styles/Font.css");
+@import url("../../../app/styles/font.css");
 
 .main {
     position: relative;
@@ -84,7 +84,7 @@
         z-index: -100;
     }
     .corridorImg:before {
-        background: radial-gradient(rgba(0, 0, 0, 0.8) 100%);
+        background: rgba(0, 0, 0, 0.65) !important;
     }
     .gameTitle {
         position: absolute;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './styles/Button.module.scss';
+import classes from './styles/button.module.scss';
 
 
 const AnimationButton = ({ data_hover, data_button, target }) => {
