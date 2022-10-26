@@ -52,13 +52,15 @@ const Games = () => {
     };
 
     const updateLightCursor = (e) => {
-        let x = e.clientX;
-        let y = e.clientY;
+        if (window.innerWidth > 900) {
+            let x = e.clientX;
+            let y = e.clientY;
 
-        let corridorcursorX = document.getElementById('corridorImg');
-        corridorcursorX.style.setProperty('--cursorX', x + 'px');
-        let corridorcursorY = document.getElementById('corridorImg');
-        corridorcursorY.style.setProperty('--cursorY', y + 'px');
+            let corridorcursorX = document.getElementById('corridorImg');
+            corridorcursorX.style.setProperty('--cursorX', x + 'px');
+            let corridorcursorY = document.getElementById('corridorImg');
+            corridorcursorY.style.setProperty('--cursorY', y + 'px');
+        }
     };
 
     document.addEventListener('mousemove', updateLightCursor);

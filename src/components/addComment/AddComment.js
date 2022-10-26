@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import React, { useState } from 'react';
 
 import classes from './styles/AddComment.module.scss';
 
@@ -8,7 +8,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 
 import Button from '@mui/material/Button';
-import Slide from '@mui/material/Slide';
 import TextField from '@mui/material/TextField';
 import Rating from '@mui/material/Rating';
 
@@ -24,25 +23,23 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const AddComment = ({ isOpen, closeHandeler }) => {
     let [formData, setFormData] = useState({
-        name: null,
-        opinion: null,
+        name: "",
+        opinion: "",
         rate: 2.5
     });
 
-    console.log(isOpen)
-
-    // const formTextFieldChangeHandler = (event, inputName) => {
-    //     let newData = { ...formData };
-    //     newData[inputName] = event.target.value;
-    //     setFormData(newData);
-    // };
+    const formTextFieldChangeHandler = (event, inputName) => {
+        let newData = { ...formData };
+        if (inputName === 'rate'){
+            newData[inputName] = Number(event.target.value);
+        }else{
+            newData[inputName] = event.target.value;
+        }
+        setFormData(newData);
+    };
 
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
-    const Transition = forwardRef(function Transition(props, ref) {
-        return <Slide direction="up" ref={ref} {...props} />;
-    });
 
     const rtltheme = createTheme({
         direction: 'rtl', // Both here and <body dir="rtl">
@@ -58,7 +55,6 @@ const AddComment = ({ isOpen, closeHandeler }) => {
             fullScreen={fullScreen}
             open={isOpen}
             onClose={closeHandeler}
-            TransitionComponent={Transition}
         >
             <DialogTitle className={classes.dialogTitle}>
                 {"نظر خود را در مورد بازی میراژ ایجاد کنید"}
@@ -67,11 +63,11 @@ const AddComment = ({ isOpen, closeHandeler }) => {
                 <CacheProvider value={cacheRtl}>
                     <ThemeProvider theme={rtltheme}>
                         <div dir="rtl">
-                            <TextField className={classes.TextField} value={formData.name} id="outlined-basic" label="نام و نام خانوادگی" fullWidth />
-                            <TextField className={classes.TextField} value={formData.opinion} id="outlined-multiline-flexible" multiline rows={3} maxRows={3} label="نظر" fullWidth />
+                            <TextField onChange={(e) => formTextFieldChangeHandler(e, 'name')} className={classes.TextField} value={formData.name} label="نام و نام خانوادگی" fullWidth />
+                            <TextField onChange={(e) => formTextFieldChangeHandler(e, 'opinion')} className={classes.TextField} value={formData.opinion} multiline rows={3} label="نظر" fullWidth />
                             <div className={classes.ratingBox}>
                                 <span className={classes.ratingTitle}>رتبه شما: </span>
-                                <Rating name="game-rating" defaultValue={2.5} precision={0.5} />
+                                <Rating onChange={(e) => formTextFieldChangeHandler(e, 'rate')} defaultValue={2.5} precision={0.5} />
                             </div>
                         </div>
                     </ThemeProvider>
