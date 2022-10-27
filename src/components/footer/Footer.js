@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classes from './styles/footer.module.scss';
 
@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import Hidden from '@mui/material/Hidden';
+import Button from '@mui/material/Button';
 
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import EmailRounded from '@mui/icons-material/EmailRounded';
@@ -17,12 +18,50 @@ import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import Loading from "../loader/Loading";
+import SnackBarMessage from '../snackbarMessage/SnackBarMessage';
+
+import CallApi from "../../functions/CallApi";
+
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import logo from '../../assets/images/logoWithOutName.png';
 
 const Footer = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [snackeMessageOpen, setSnackMessageOpen] = useState(false);
+    let [formData, setFormData] = useState({
+        name: "",
+        email: "",
+    });
+
+    const openSnackeMessageHandler = () => {
+        setSnackMessageOpen(true);
+    };
+
+    const closeSnackeMessageHandler = () => {
+        setSnackMessageOpen(false);
+    };
+
+    const formTextFieldChangeHandler = (event, inputName) => {
+        let newData = { ...formData };
+        newData[inputName] = event.target.value;
+        setFormData(newData);
+    };
+
+    const sendDataHandler = async (event) => {
+        event.preventDefault();
+        setIsLoading(true);
+        try {
+            // await CallApi(SendComment(formData.name, formData.opinion, formData.rate));
+            openSnackeMessageHandler();
+        } catch (error) {
+            console.log(error);
+        };
+        setIsLoading(false);
+    };
+
     const rtltheme = createTheme({
         direction: 'rtl', // Both here and <body dir="rtl">
     });
@@ -33,6 +72,8 @@ const Footer = () => {
     });
     return (
         <>
+            {isLoading && <Loading isLoading={true} />}
+            <SnackBarMessage isOpen={snackeMessageOpen} closeHandler={closeSnackeMessageHandler} message="با موفقیت ثبت شد" />
             <Grid container direction="row-reverse" className={classes.footeerContainer}>
                 <Grid item xs={12} md={4} className={classes.footerItemBox}>
                     <div className={classes.menuBox}>
@@ -96,12 +137,15 @@ const Footer = () => {
                                     <div dir="rtl" className={classes.inputBox}>
                                         <Box className={classes.inputIconBox}>
                                             <AccountCircle sx={{ color: 'white', mr: 1, my: 0.5 }} />
-                                            <TextField className={classes.textField} id="input-with-sx" label="نام و نام خانوادگی" variant="standard" />
+                                            <TextField onChange={(e) => formTextFieldChangeHandler(e, 'name')} value={formData.name} className={classes.textField} label="نام و نام خانوادگی" variant="standard" />
                                         </Box>
                                         <Box className={classes.inputIconBox}>
                                             <EmailRounded sx={{ color: 'white', mr: 1, my: 0.5 }} />
-                                            <TextField className={classes.textField} id="input-with-sx" label="ایمیل" variant="standard" />
+                                            <TextField onChange={(e) => formTextFieldChangeHandler(e, 'email')} value={formData.email} className={classes.textField} label="ایمیل" variant="standard" />
                                         </Box>
+                                        <Button disabled={isLoading} className={classes.submitButton} autoFocus onClick={sendDataHandler}>
+                                            ثبت
+                                        </Button>
                                     </div>
                                 </ThemeProvider>
                             </CacheProvider>

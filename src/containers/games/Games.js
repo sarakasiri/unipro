@@ -12,6 +12,9 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
+import { AllComments } from "../../api/GameComments";
+import CallApi from "../../functions/CallApi";
+
 import Loader from '../../components/loader/Loader';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
@@ -35,13 +38,36 @@ import metro from '../../assets/svg/metro.svg';
 const Games = () => {
     let [loader, setLoader] = useState(false);
     let [addCommentOpen, setAddCommentOpen] = useState(false)
+    let [userComments, setUserComments] = useState([]);
+
+    // useEffect(() => {
+    //     setLoader(true);
+    //     setTimeout(() => {
+    //         setLoader(false);
+    //     }, 3000);
+    // }, []);
+
+    const getPageData = async () => {
+        setLoader(true);
+        try {
+            let responseComments = await CallApi(AllComments());
+            let comments_data = [];
+            responseComments.map(item => {
+                comments_data.push(
+                    <UserComments star={item.rate} name={item.name} message={item.opinion} />
+                )
+            });
+            setUserComments(comments_data);
+        } catch (error) {
+            console.log(error);
+        };
+        setLoader(false);
+    };
 
     useEffect(() => {
-        setLoader(true);
-        setTimeout(() => {
-            setLoader(false);
-        }, 3000);
+        getPageData();
     }, []);
+
 
     const addCommentOpenHandler = () => {
         setAddCommentOpen(true);
@@ -66,19 +92,10 @@ const Games = () => {
     document.addEventListener('mousemove', updateLightCursor);
     document.addEventListener('touchmove', updateLightCursor);
 
-    const items = [
-        <UserComments star={3} name="1عباس رحیم زاده" message="بازی خوبی بود، دوستش داشتم، پرتغال دان زات دان دادن" />,
-        <UserComments star={3} name="2عباس رحیم زاده" message="بازی خوبی بود، دوستش داشتم، پرتغال دان زات دان دادن" />,
-        <UserComments star={3} name="3عباس رحیم زاده" message="بازی خوبی بود، دوستش داشتم، پرتغال دان زات دان دادن" />,
-        <UserComments star={3} name="4عباس رحیم زاده" message="بازی خوبی بود، دوستش داشتم، پرتغال دان زات دان دادن" />,
-        <UserComments star={3} name="5عباس رحیم زاده" message="بازی خوبی بود، دوستش داشتم، پرتغال دان زات دان دادن" />,
-        <UserComments star={3} name="6عباس رحیم زاده" message="بازی خوبی بود، دوستش داشتم، پرتغال دان زات دان دادن" />,
-        <UserComments star={3} name="7عباس رحیم زاده" message="بازی خوبی بود، دوستش داشتم، پرتغال دان زات دان دادن" />
-    ];
-
     return (
         <>
             <Loader loader={loader} />
+            <AddComment isOpen={addCommentOpen} closeHandler={addCommentCloseHandler} />
             <Navbar />
             <div className={classes.main}>
                 <ToUp />
@@ -187,7 +204,7 @@ const Games = () => {
                                     responsive={{
                                         0: { items: 4, },
                                     }}
-                                    items={items}
+                                    items={userComments}
                                 />
                             </Hidden>
                             <Hidden mdDown lgUp>
@@ -201,7 +218,7 @@ const Games = () => {
                                     responsive={{
                                         0: { items: 3, },
                                     }}
-                                    items={items}
+                                    items={userComments}
                                 />
                             </Hidden>
                             <Hidden smDown mdUp>
@@ -215,7 +232,7 @@ const Games = () => {
                                     responsive={{
                                         0: { items: 2, },
                                     }}
-                                    items={items}
+                                    items={userComments}
                                 />
                             </Hidden>
                             <Hidden smUp>
@@ -229,12 +246,11 @@ const Games = () => {
                                     responsive={{
                                         0: { items: 1, },
                                     }}
-                                    items={items}
+                                    items={userComments}
                                 />
                             </Hidden>
                             <div className={classes.addCommentButton} >
                                 <BorderButton clickEvent={addCommentOpenHandler} value="ثبت نظر" />
-                                <AddComment isOpen={addCommentOpen} closeHandeler={addCommentCloseHandler} />
                             </div>
                         </div>
                     </Grid>

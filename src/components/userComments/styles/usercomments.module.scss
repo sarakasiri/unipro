@@ -30,3 +30,7 @@
     direction: rtl;
     text-align: center;
 }
+
+.ratingEl{
+    flex-direction: row-reverse !important;
+}

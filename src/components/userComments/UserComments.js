@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './styles/usercomments.module.scss';
 
-import StarRating from '../starRating/StarRating';
+import Rating from '@mui/material/Rating';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
@@ -14,7 +14,7 @@ const UserComments = ({ star, name, message }) => {
         <>
             <div className={classes.userComment}>
                 <LazyLoadImage src={ghost_comment} className={classes.ghostComment} />
-                <StarRating value={star} />
+                <Rating className={classes.ratingEl} size="small" readOnly precision={0.5} value={star} />
                 <h2 className={classes.commentName}>{name}</h2>
                 <span className={classes.commentMessage}>
                     {message}
