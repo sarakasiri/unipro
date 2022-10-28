@@ -21,6 +21,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Loading from "../loader/Loading";
 import SnackBarMessage from '../snackbarMessage/SnackBarMessage';
 
+import { AddNewsletter } from "../../api/Newsletter";
 import CallApi from "../../functions/CallApi";
 
 import { Link } from 'react-router-dom';
@@ -54,7 +55,7 @@ const Footer = () => {
         event.preventDefault();
         setIsLoading(true);
         try {
-            // await CallApi(SendComment(formData.name, formData.opinion, formData.rate));
+            await CallApi(AddNewsletter(formData.name, formData.email));
             openSnackeMessageHandler();
         } catch (error) {
             console.log(error);
@@ -102,10 +103,10 @@ const Footer = () => {
                                 آدرس: تهران - چیتگر - بلوار کوهک - پلاک ۱۳
                             </li>
                             <li className={classes.menuItem}>
-                                شماره تماس: 09389669643 - 09378819116
+                                شماره تماس: <span className={classes.regular}>09389669643 - 09378819116</span>
                             </li>
                             <li className={classes.menuItem}>
-                                اینستاگرام: legionescaperoom
+                                اینستاگرام: <span className={classes.regular}>legionescaperoom</span>
                             </li>
                         </ul>
                     </div>
@@ -143,7 +144,7 @@ const Footer = () => {
                                             <EmailRounded sx={{ color: 'white', mr: 1, my: 0.5 }} />
                                             <TextField onChange={(e) => formTextFieldChangeHandler(e, 'email')} value={formData.email} className={classes.textField} label="ایمیل" variant="standard" />
                                         </Box>
-                                        <Button disabled={isLoading} className={classes.submitButton} autoFocus onClick={sendDataHandler}>
+                                        <Button disabled={isLoading} className={classes.submitButton} onClick={sendDataHandler}>
                                             ثبت
                                         </Button>
                                     </div>

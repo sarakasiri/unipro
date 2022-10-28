@@ -190,7 +190,6 @@ const Games = () => {
                             <Reservation />
                         </div>
                     </Grid>
-                    <Grid item xs={12}>
                         <div className={classes.commentsBg} id="comments">
                             <Title englishTitle="Comments" persianTitle="نظرات کاربران میراژ" />
                             <Hidden lgDown>
@@ -253,7 +252,6 @@ const Games = () => {
                                 <BorderButton clickEvent={addCommentOpenHandler} value="ثبت نظر" />
                             </div>
                         </div>
-                    </Grid>
                 </Grid>
             </div>
             <Footer />

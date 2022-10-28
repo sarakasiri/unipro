@@ -58,6 +58,7 @@ const Navbar = () => {
                     anchor='right'
                     open={anchorElNav}
                     onClose={handleCloseNavMenu}
+                    className={classes.drawerResponsive}
                 >
                     <Box
                         sx={{ width: 200 }}
@@ -65,9 +66,9 @@ const Navbar = () => {
                         onKeyDown={handleCloseNavMenu}
                     >
                         <List>
-                            <ListItem disablePadding>
+                            <ListItem className={classes.listItemResponsive} disablePadding>
                                 <ListItemButton>
-                                    <CloseIcon onClick={handleCloseNavMenu} />
+                                    <CloseIcon className={classes.drawerIcon} onClick={handleCloseNavMenu} />
                                 </ListItemButton>
                             </ListItem>
                             {pages.map((page, index) => (

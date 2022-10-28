@@ -3,11 +3,11 @@ export const AllComments = () => ({
     url: 'comments/api/listcreate/'
 });
 
-export const SendComment = (name, opinion, rate, game) => ({
+export const SendComment = (name, opinion, rate) => ({
     method: 'post',
     url: 'comments/api/listcreate/',
     data: {
-        game: "mirage",
+        game: "میراژ",
         name: name,
         opinion: opinion,
         rate: rate

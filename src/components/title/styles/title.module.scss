@@ -14,16 +14,17 @@
     font-weight: 900 !important;
     font-family: "Work Sans", sans-serif !important;
     position: absolute;
-    font-size: 3rem;
+    font-size: 2.5rem;
     left: 50%;
-    transform: translate(-50%, 15%);
+    transform: translate(-50%, 30%);
     color: rgba(255, 255, 255, 0.1);
 }
 
 .persianTitle {
-    font-family: Dubai_Bold !important;
+    font-family: Bold_Title !important;
     color: #fefefe;
     width: max-content;
+    font-size: 1.9rem;
 }
 
 @media screen and (max-width: 600px) {

@@ -107,10 +107,10 @@ const AddComment = ({ isOpen, closeHandler }) => {
                         </CacheProvider>
                     </DialogContent>
                     <DialogActions className={classes.dialogActions}>
-                        <Button disabled={isLoading} className={classes.dialogButton} autoFocus onClick={closeHandler}>
+                        <Button disabled={isLoading} className={classes.dialogButton} onClick={closeHandler}>
                             بستن
                         </Button>
-                        <Button disabled={isLoading} className={classes.dialogButton} autoFocus onClick={sendCommentHandler}>
+                        <Button disabled={isLoading} className={classes.dialogButton} onClick={sendCommentHandler}>
                             ثبت
                         </Button>
                     </DialogActions>

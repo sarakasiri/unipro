@@ -46,28 +46,10 @@
     justify-content: center;
 }
 
-.gameTitle .persianTitle {
-    font-family: Dubai_Bold !important;
-    font-weight: 900 !important;
-    font-size: 2rem;
-}
-
-.englishTitle {
-    line-height: 1;
-    text-transform: uppercase;
-    font-weight: 900 !important;
-    font-family: "Work Sans", sans-serif !important;
-    position: absolute;
-    font-size: 3rem;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -15%);
-    color: rgba(255, 255, 255, 0.2);
-}
-
 .gameTitle .persianTitle2 {
-    font-size: 1.3rem;
+    font-size: 3rem;
     margin-top: 5rem;
+    font-family: Content_Normal !important;
 }
 
 .sectionBoxImage {
@@ -137,14 +119,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(180, 180, 180, 0.2) !important;
+    background: rgba(180, 180, 180, 0.1) !important;
     border-radius: 1rem !important;
     position: relative;
     padding: 1rem 2rem 2rem 2rem;
     max-width: 30rem;
-    font-family: Dubai_Regular !important;
+    font-family: Content_Normal !important;
     text-align: justify;
     direction: rtl;
+    font-size: 2.6rem;
 }
 
 .senarioContent {
@@ -165,7 +148,7 @@
 .fearLevel {
     display: flex;
     flex-direction: column;
-    font-family: Dubai_Bold !important;
+    font-family: Bold_Title !important;
     position: relative;
     direction: rtl;
 }
@@ -312,14 +295,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(180, 180, 180, 0.2) !important;
+    background: rgba(180, 180, 180, 0.1) !important;
     border-radius: 1rem !important;
     position: relative;
     padding: 1rem 2rem 2rem 2rem;
     min-width: 30rem;
-    font-family: Dubai_Regular !important;
+    font-family: Content_Normal !important;
     text-align: justify;
     direction: rtl;
+    font-size: 2.6rem;
 }
 
 .address {
@@ -455,7 +439,6 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -30%);
-    font-family: Dubai_Regular !important;
 }
 
 /* comments 5 */

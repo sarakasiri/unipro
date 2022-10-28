@@ -20,9 +20,6 @@ import VideoScroll from '../../components/video/Video';
 import ToUp from '../../components/toUp/ToUp';
 
 import logo from '../../assets/images/logo.png';
-import BirthDay from '../../assets/images/happy_birthday.png';
-import cake from '../../assets/images/cake.png';
-import baloon from '../../assets/images/baloon.png';
 import wave from '../../assets/svg/scene_wave.svg';
 import tablet_wave from '../../assets/svg/scene_tablet_wave.svg';
 import mobile_wave from '../../assets/svg/scene_mobile_wave.svg';
@@ -41,7 +38,7 @@ const Home = () => {
     return (
         <>
             <Loader loader={loader} />
-            <Navbar/>
+            <Navbar />
             <div className={classes.main}>
                 <ToUp />
                 <Grid container direction="column" >
@@ -50,7 +47,7 @@ const Home = () => {
                             <Hidden lgDown>
                                 <LazyLoadImage src={wave} alt="wave" className={classes.wave} />
                             </Hidden>
-                            <Hidden mdDown>
+                            <Hidden mdDown lgUp>
                                 <LazyLoadImage src={tablet_wave} alt="wave" className={classes.wave} />
                             </Hidden>
                             <Hidden mdUp>
@@ -67,26 +64,26 @@ const Home = () => {
                             </div>
                         </div>
                     </Grid>
-                    <Grid item xs={12}>
+                    {/* <Grid item xs={12}> */}
                         <div className={classes.videoContainer}>
                             <VideoScroll file='legion' />
                         </div>
-                    </Grid>
-                    <Grid item xs={12}>
+                    {/* </Grid> */}
+                    {/* <Grid item xs={12}> */}
                         <div className={classes.birthDayBox}>
                             <div className={classes.contentBox}>
-                                <Title englishTitle="birthday party" persianTitle="مراسم تولد در لژیون اسکیپ" />
-                                <div className={`${classes.description} ${classes.birthdaydesc}`}>
-                                    <span> تولدی جذاب و خاص</span>
-                                    <span>تولدی خاص و جذاب را برای دوستانتون رقم بزنید </span>
-                                </div>
+                                <Card className={classes.birthdayCard}>
+                                    <Title englishTitle="birthday party" persianTitle="مراسم تولد در لژیون اسکیپ" />
+                                    <div className={`${classes.description} ${classes.birthdaydesc}`}>
+                                        <span> تولدی جذاب و خاص</span>
+                                        <span>مجموعه لژیون اسکیپ افتخار این را دارد در محیطی آرام و دلنشین میزبان مراسم با شکوه تولدتان بوده تا یک شب رویایی وخاطره انگیزی را برای شما عزیزان گرامی رقم بزند </span>
+                                        <span>ما با شما در  شب آرزوهایتان  شریک هستیم </span>
+                                    </div>
+                                </Card>
                             </div>
-                            <LazyLoadImage src={BirthDay} alt="happy birthday" className={classes.BirthDayIMG} />
-                            <LazyLoadImage src={cake} alt="cake birthday" className={classes.cakeIMG} />
-                            <LazyLoadImage src={baloon} alt="baloon birthday" className={classes.baloonIMG} />
                         </div>
-                    </Grid>
-                    <Grid item xs={12}>
+                    {/* </Grid> */}
+                    {/* <Grid item xs={12}> */}
                         <div className={classes.aboutUs}>
                             <div className={classes.aboutUsBox}>
                                 <Card className={classes.aboutUsCard}>
@@ -109,22 +106,22 @@ const Home = () => {
                                     <Title englishTitle="Contact Us" persianTitle="ارتباط با ما" />
                                     <div className={classes.description}>
                                         <span>
-                                            <AlternateEmailIcon className={classes.Icon} /> ایمیل: info@legionescaperoom.ir
+                                            <AlternateEmailIcon className={classes.Icon} /> ایمیل: <span className={classes.regular}>info@legionescaperoom.ir</span>
                                         </span>
                                         <span>
-                                            <ContactPhoneIcon className={classes.Icon} /> شماره تماس: 09389669643 - 09378819116
+                                            <ContactPhoneIcon className={classes.Icon} /> شماره تماس: <span className={classes.regular}>09389669643 - 09378819116</span>
                                         </span>
                                         <span>
-                                            <InstagramIcon className={classes.Icon} /> اینستاگرام: legionescaperoom
+                                            <InstagramIcon className={classes.Icon} /> اینستاگرام: <span className={classes.regular}>legionescaperoom</span>
                                         </span>
                                     </div>
                                 </Card>
                             </div>
                         </div>
-                    </Grid>
+                    {/* </Grid> */}
                 </Grid>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };

@@ -13,8 +13,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route exact path='/mirageGame' element={<Games />} />
-        <Route exact path='/404-notfound' element={<Page404 />} />
-        <Route path='*' element={<Navigate to='/404-notfound' />} />
+        <Route path='*' element={<Page404 />} />
       </Routes>
     </div>
   );

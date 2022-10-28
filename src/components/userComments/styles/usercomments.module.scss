@@ -19,16 +19,17 @@
 }
 
 .userComment .commentName {
-    font-family: Dubai_Bold;
+    font-family: Bold_Title;
     margin-top: 0.5rem;
     margin-bottom: 0.2rem;
     direction: rtl;
 }
 
 .userComment .commentMessage {
-    font-family: Dubai_Regular;
+    font-family: Content_Normal;
     direction: rtl;
     text-align: center;
+    font-size: 2.6rem;
 }
 
 .ratingEl{

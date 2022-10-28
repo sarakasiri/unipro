@@ -1,5 +1,13 @@
 @import url("../../../app/styles/font.css");
 
+
+.regular{
+    font-family: Content_Regular !important;
+    margin-right: 0.2rem;
+    font-size: 1rem !important;
+}
+
+
 .footeerContainer {
     width: 100%;
     min-height: 75vh;
@@ -34,7 +42,7 @@
 }
 
 .menuTitle {
-    font-family: Dubai_Bold !important;
+    font-family: Bold_Title !important;
     font-size: 1.6rem;
     text-align: center;
     font-weight: bold;
@@ -53,13 +61,15 @@
     list-style: none;
     width: fit-content;
     color: #fefefe !important;
-    font-family: Dubai_Regular !important;
+    font-family: Content_Normal !important;
+    font-size: 2.3rem;
 }
 
 .menuLink {
     color: #fefefe !important;
     text-decoration: none !important;
-    font-family: Dubai_Regular !important;
+    font-family: Content_Normal !important;
+    font-size: 2.3rem;
 }
 
 .menuLink::after {
@@ -150,8 +160,9 @@
 .persianText {
     margin-bottom: 0.5rem;
     line-height: 1;
-    font-family: Dubai_Regular !important;
+    font-family: Content_Normal !important;
     color: #999999;
+    font-size: 2.3rem;
 }
 
 .englishText {
@@ -167,8 +178,9 @@
 }
 
 .newsletterTitle {
-    font-family: Dubai_Regular !important;
+    font-family: Content_Normal !important;
     color: #999999;
+    font-size: 2.3rem;
 }
 
 .inputBox {
