@@ -1,0 +1,37 @@
+@import url("../../../app/styles/font.css");
+
+.userComment {
+    width: 16rem;
+    height: 20rem;
+    background-color: rgba(100, 100, 100, 0.8);
+    border-radius: 0.8rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.userComment .ghostComment {
+    width: 7rem;
+    height: 7rem;
+}
+
+.userComment .commentName {
+    font-family: Bold_Title;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+    direction: rtl;
+}
+
+.userComment .commentMessage {
+    font-family: Content_Normal;
+    direction: rtl;
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+.ratingEl{
+    flex-direction: row-reverse !important;
+}

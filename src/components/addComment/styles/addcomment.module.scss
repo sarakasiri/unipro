@@ -1,0 +1,38 @@
+@import url("../../../app/styles/font.css");
+
+.dialogTitle {
+    text-align: center;
+    font-size: Bold_Title !important;
+}
+
+.dialogContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialogContent .TextField{
+    margin-top: 2rem;
+}
+
+.dialogActions {
+    flex-direction: row-reverse;
+    font-size: Content_Regular !important;
+}
+
+.dialogButton {
+    color: #212121 !important;
+    font-size: Content_Regular !important;
+}
+
+.ratingBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.ratingTitle {
+    margin-left: 1rem;
+}

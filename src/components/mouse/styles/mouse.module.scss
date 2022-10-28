@@ -1,0 +1,43 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.Mouse {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 50px;
+    height: 80px;
+    border-radius: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.Mouse:hover {
+    cursor: pointer;
+}
+
+.Mouse::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    background-image: url('../../../assets/svg/scrollghost.svg');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    animation: scroll 1s infinite alternate;
+    @keyframes scroll {
+        100% {
+            transform: translate(-50%, 15px);
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .Mouse{
+        bottom: 2%;
+    }
+}

@@ -1,0 +1,37 @@
+@import url("../../../app/styles/font.css");
+
+.titleBox {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
+.englishTitle {
+    width: max-content;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 900 !important;
+    font-family: "Work Sans", sans-serif !important;
+    position: absolute;
+    font-size: 2.5rem;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.persianTitle {
+    font-family: Bold_Title !important;
+    color: #fefefe;
+    width: max-content;
+    font-size: 1.9rem;
+}
+
+@media screen and (max-width: 600px) {
+    .englishTitle {
+        font-size: 2.5rem;
+    }
+    .persianTitle {
+        font-size: 1.5rem;
+    }
+}

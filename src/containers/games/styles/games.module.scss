@@ -1,0 +1,444 @@
+@import url("../../../app/styles/font.css");
+
+.main {
+    position: relative;
+}
+
+/* section 1 */
+
+.corridorImg {
+    cursor: none;
+    --cursorX: 50vw;
+    --cursorY: 50vh;
+    height: 100vh;
+    position: relative;
+}
+
+.corridorImg:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    background: radial-gradient(
+        circle 6vmax at var(--cursorX) var(--cursorY),
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.3) 80%,
+        rgba(0, 0, 0, 0.94) 100%
+    );
+}
+
+.gameTitle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    color: #fefefe;
+    padding: 3rem;
+}
+
+.gameTitleBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameTitle .persianTitle2 {
+    font-size: 3rem;
+    margin-top: 5rem;
+    font-family: Content_Normal !important;
+}
+
+.sectionBoxImage {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .sectionBoxImage {
+        position: absolute;
+        right: 50%;
+        width: unset;
+        transform: translate(50%, 0%);
+        z-index: -100;
+    }
+    .corridorImg:before {
+        background: rgba(0, 0, 0, 0.65) !important;
+    }
+    .gameTitle {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+}
+
+/* section 1 */
+/*section 2 */
+
+.aboutGame {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(93.4deg, #242946 16.97%, #131522 86.4%);
+}
+
+.blubBackground {
+    position: absolute;
+    top: 0;
+    left: -2rem;
+}
+
+.gameCoverSVG {
+    position: absolute;
+    top: 52.5%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.blubCoverGame {
+    filter: drop-shadow(5.6px 21.2px 11.2px hsl(0deg, 0%, 0% / 0.33));
+}
+
+.aboutGameBox {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.senario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(180, 180, 180, 0.1) !important;
+    border-radius: 1rem !important;
+    position: relative;
+    padding: 1rem 2rem 2rem 2rem;
+    max-width: 30rem;
+    font-family: Content_Normal !important;
+    text-align: justify;
+    direction: rtl;
+    font-size: 2.6rem;
+}
+
+.senarioContent {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoGame {
+    width: 30rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hardshipLevel,
+.fearLevel {
+    display: flex;
+    flex-direction: column;
+    font-family: Bold_Title !important;
+    position: relative;
+    direction: rtl;
+}
+
+.levelIcon {
+    position: absolute;
+    width: 3.5rem;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.levelPercent {
+    color: #fefefe;
+}
+
+@media screen and (max-width: 1150px) {
+    .blubBackground {
+        bottom: 0;
+        top: unset;
+        right: -2rem;
+        left: unset;
+        transform: rotate(180deg);
+    }
+    .gameCoverSVG {
+        top: unset;
+        left: unset;
+        right: 25%;
+        bottom: 52.5%;
+        transform: translate(50%, 75%);
+    }
+    .aboutGameBox {
+        right: unset;
+        left: 2rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .blubBackground {
+        width: 45rem;
+        bottom: -3rem;
+        right: -4rem;
+    }
+    .gameCoverSVG {
+        width: 45rem;
+        transform: translate(55%, 85%);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .aboutGameBox {
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+    .infoGame {
+        padding: 1rem;
+    }
+    .circleProgress {
+        width: 75px !important;
+        height: 75px !important;
+    }
+    .levelIcon {
+        width: 2.5rem;
+        top: 27.5%;
+    }
+    .gameCoverSVG {
+        width: 40rem;
+        bottom: 48%;
+        right: 50%;
+        transform: translate(50%, 85%);
+    }
+    .blubBackground {
+        width: 40rem;
+        bottom: -9rem;
+        right: 50%;
+        transform: translate(50%, 0%) rotate(-130deg);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .aboutGameBox {
+        width: 100%;
+    }
+    .senario {
+        max-width: unset;
+        width: 80%;
+    }
+    .gameCoverSVG {
+        width: 30rem;
+    }
+    .infoGame {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .senario {
+        max-width: unset;
+        width: 70%;
+    }
+    .gameCoverSVG {
+        bottom: 45%;
+        width: 25rem;
+    }
+}
+
+/* section 2 */
+/* section 3 */
+
+.gmaeLocation {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(93.4deg, #242946 16.97%, #131522 86.4%);
+}
+
+.blubBackgrounButton {
+    position: absolute;
+    transform: rotate(180deg);
+    bottom: 0;
+    right: -2rem;
+}
+
+.locationImage {
+    position: absolute;
+    width: 40rem;
+    bottom: 0%;
+    right: 0%;
+    transform: translate(-7%, -7%);
+}
+
+.loactionGameBox {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    min-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(180, 180, 180, 0.1) !important;
+    border-radius: 1rem !important;
+    position: relative;
+    padding: 1rem 2rem 2rem 2rem;
+    min-width: 30rem;
+    font-family: Content_Normal !important;
+    text-align: justify;
+    direction: rtl;
+    font-size: 2.6rem;
+}
+
+.address {
+    margin-top: 3rem;
+}
+
+.location span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    direction: rtl;
+}
+
+.locationIcon {
+    width: 3rem;
+    margin-left: 1rem;
+}
+
+@media screen and (max-width: 1250px) {
+    .blubBackgrounButton {
+        width: 47rem;
+    }
+    .locationImage {
+        width: 32rem;
+        bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .blubBackgrounButton {
+        width: 47rem;
+        transform: rotate(0deg) scaleY(-1);
+        right: unset;
+        left: -5%;
+    }
+    .locationImage {
+        width: 30rem;
+        left: 5%;
+        right: unset;
+    }
+    .loactionGameBox {
+        min-width: 25rem;
+        right: 2rem;
+        left: unset;
+    }
+    .location {
+        min-width: 25rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .blubBackgrounButton {
+        width: 43rem;
+    }
+    .locationImage {
+        width: 25rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .blubBackgrounButton {
+        width: 40rem;
+        top: -9rem;
+        transform: translate(-50%, 0%) rotate(-130deg) scale(-1);
+        left: 45.5%;
+    }
+    .locationImage {
+        width: 23rem;
+        left: 45%;
+        top: 0%;
+        bottom: unset;
+        transform: translate(-50%, 0%);
+    }
+    .loactionGameBox {
+        top: 50%;
+        left: 50%;
+        right: unset;
+        transform: translate(-50%, -50%);
+    }
+    .location{
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .loactionGameBox {
+        min-width: unset;
+        width: 70%;
+    }
+    .location{
+        min-width: 100%;
+    }
+}
+
+/* section 3 */
+/* section 4 */
+
+.reservation {
+    background-image: url("../../../assets/images/reservationBG.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* section 4 */
+/* section 5 */
+
+.commentsBg {
+    background-image: url("../../../assets/images/commnetsBg.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.addCommentButton {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+/* comments 5 */
