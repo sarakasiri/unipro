@@ -4,8 +4,8 @@ import classes from './styles/games.module.scss';
 
 import Grid from '@mui/material/Grid/Grid';
 import Card from '@mui/material/Card/Card';
-import CircularProgress from '@mui/material/CircularProgress';
 import Hidden from '@mui/material/Hidden';
+import Typography from '@mui/material/Typography';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 // import NeshanMap from 'react-neshan-map-leaflet';
@@ -26,12 +26,11 @@ import Reservation from '../../components/reservation/Reservation';
 import Title from '../../components/title/Title';
 import ToUp from '../../components/toUp/ToUp';
 import AddComment from '../../components/addComment/AddComment';
+import GameLevel from '../../components/gamelevel/GameLevel';
 
 import corridor from '../../assets/images/corridor.png';
 import mirage_cover from '../../assets/images/mirage_cover.png';
 import location from '../../assets/images/location.png';
-import ghost from '../../assets/svg/ghost.svg';
-import hardship from '../../assets/svg/hardship.svg';
 import locationSVG from '../../assets/svg/location.svg';
 import metro from '../../assets/svg/metro.svg';
 
@@ -39,13 +38,6 @@ const Games = () => {
     let [loader, setLoader] = useState(false);
     let [addCommentOpen, setAddCommentOpen] = useState(false)
     let [userComments, setUserComments] = useState([]);
-
-    // useEffect(() => {
-    //     setLoader(true);
-    //     setTimeout(() => {
-    //         setLoader(false);
-    //     }, 3000);
-    // }, []);
 
     const getPageData = async () => {
         setLoader(true);
@@ -107,7 +99,9 @@ const Games = () => {
                             <div className={classes.gameTitle}>
                                 <div className={classes.gameTitleBox}>
                                     <Title englishTitle="Mirage" persianTitle="میراژ" />
-                                    <span className={classes.persianTitle2}>اتاق فراری ترسناک و هیجان انگیز</span>
+                                    <Typography variant='subtitle1' className={`title-normal ${classes.persianTitle2}`}>
+                                        اتاق فراری ترسناک و هیجان انگیز
+                                    </Typography>
                                 </div>
                             </div>
                         </div>
@@ -133,24 +127,13 @@ const Games = () => {
                                 <Card className={classes.senario}>
                                     <Title englishTitle="Senario" persianTitle="سناریو بازی" />
                                     <div className={classes.senarioContent}>
-                                        <span>
+                                        <Typography variant='caption' className='caption text-2'>
                                             شما موفق شدین در مزایده ای که بانک برگزار کرده، برنده ی خانه ای متروکه بشین. پس از ورود به داخل خانه، متوجه میشین خانواده ای که قبلا در این خانه سکونت داشتن، دچار سرنوشت عجیبی شدن، سرنوشتی که شماهم درگیر اون میشین...
-                                        </span>
+                                        </Typography>
                                         <AnimationButton data_hover="رزور" data_button="برای رزرو کلیک کنید!" target="reserve" />
                                     </div>
                                 </Card>
-                                <div className={classes.infoGame}>
-                                    <div className={classes.hardshipLevel}>
-                                        <CircularProgress className={classes.circleProgress} variant="determinate" value={91} size={100} />
-                                        <LazyLoadImage src={hardship} className={classes.levelIcon} />
-                                        درجه سختی: <span className={classes.levelPercent}>95%</span>
-                                    </div>
-                                    <div className={classes.fearLevel}>
-                                        <CircularProgress className={classes.circleProgress} variant="determinate" value={95} size={100} />
-                                        <LazyLoadImage src={ghost} className={classes.levelIcon} />
-                                        درجه ترس: <span className={classes.levelPercent}>95%</span>
-                                    </div>
-                                </div>
+                                <GameLevel hardshipLevel={95} fearLevel={90} />
                             </div>
                         </div>
                     </Grid>
@@ -166,12 +149,12 @@ const Games = () => {
                                 <Card className={classes.location}>
                                     <Title englishTitle="Location" persianTitle=" محل بازی" />
                                     <div className={classes.address}>
-                                        <span>
+                                        <Typography variant='caption' className='caption text-2'>
                                             <LazyLoadImage src={metro} className={classes.locationIcon} /> نزدیک به ایستگاه مترو چیتگر
-                                        </span>
-                                        <span>
+                                        </Typography>
+                                        <Typography variant='caption' className='caption text-2'>
                                             <LazyLoadImage src={locationSVG} className={classes.locationIcon} /> تهران - چیتگر - بلوار کوهک - پلاک ۱۳
-                                        </span>
+                                        </Typography>
                                     </div>
                                 </Card>
                             </div>
@@ -190,68 +173,68 @@ const Games = () => {
                             <Reservation />
                         </div>
                     </Grid>
-                        <div className={classes.commentsBg} id="comments">
-                            <Title englishTitle="Comments" persianTitle="نظرات کاربران میراژ" />
-                            <Hidden lgDown>
-                                <AliceCarousel
-                                    disableDotsControls
-                                    disableButtonsControls
-                                    animationDuration={4000}
-                                    autoPlay
-                                    mouseTracking
-                                    infinite
-                                    responsive={{
-                                        0: { items: 4, },
-                                    }}
-                                    items={userComments}
-                                />
-                            </Hidden>
-                            <Hidden mdDown lgUp>
-                                <AliceCarousel
-                                    disableDotsControls
-                                    disableButtonsControls
-                                    animationDuration={4000}
-                                    autoPlay
-                                    mouseTracking
-                                    infinite
-                                    responsive={{
-                                        0: { items: 3, },
-                                    }}
-                                    items={userComments}
-                                />
-                            </Hidden>
-                            <Hidden smDown mdUp>
-                                <AliceCarousel
-                                    disableDotsControls
-                                    disableButtonsControls
-                                    animationDuration={4000}
-                                    autoPlay
-                                    mouseTracking
-                                    infinite
-                                    responsive={{
-                                        0: { items: 2, },
-                                    }}
-                                    items={userComments}
-                                />
-                            </Hidden>
-                            <Hidden smUp>
-                                <AliceCarousel
-                                    disableDotsControls
-                                    disableButtonsControls
-                                    animationDuration={4000}
-                                    autoPlay
-                                    mouseTracking
-                                    infinite
-                                    responsive={{
-                                        0: { items: 1, },
-                                    }}
-                                    items={userComments}
-                                />
-                            </Hidden>
-                            <div className={classes.addCommentButton} >
-                                <BorderButton clickEvent={addCommentOpenHandler} value="ثبت نظر" />
-                            </div>
+                    <div className={classes.commentsBg} id="comments">
+                        <Title englishTitle="Comments" persianTitle="نظرات کاربران میراژ" />
+                        <Hidden lgDown>
+                            <AliceCarousel
+                                disableDotsControls
+                                disableButtonsControls
+                                animationDuration={4000}
+                                autoPlay
+                                mouseTracking
+                                infinite
+                                responsive={{
+                                    0: { items: 4, },
+                                }}
+                                items={userComments}
+                            />
+                        </Hidden>
+                        <Hidden mdDown lgUp>
+                            <AliceCarousel
+                                disableDotsControls
+                                disableButtonsControls
+                                animationDuration={4000}
+                                autoPlay
+                                mouseTracking
+                                infinite
+                                responsive={{
+                                    0: { items: 3, },
+                                }}
+                                items={userComments}
+                            />
+                        </Hidden>
+                        <Hidden smDown mdUp>
+                            <AliceCarousel
+                                disableDotsControls
+                                disableButtonsControls
+                                animationDuration={4000}
+                                autoPlay
+                                mouseTracking
+                                infinite
+                                responsive={{
+                                    0: { items: 2, },
+                                }}
+                                items={userComments}
+                            />
+                        </Hidden>
+                        <Hidden smUp>
+                            <AliceCarousel
+                                disableDotsControls
+                                disableButtonsControls
+                                animationDuration={4000}
+                                autoPlay
+                                mouseTracking
+                                infinite
+                                responsive={{
+                                    0: { items: 1, },
+                                }}
+                                items={userComments}
+                            />
+                        </Hidden>
+                        <div className={classes.addCommentButton} >
+                            <BorderButton clickEvent={addCommentOpenHandler} value="ثبت نظر" />
                         </div>
+                    </div>
                 </Grid>
             </div>
             <Footer />

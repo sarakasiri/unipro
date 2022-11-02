@@ -1,0 +1,98 @@
+.container {
+    position: relative;
+    width: 27%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 0.7rem;
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions {
+    width: 90%;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 11;
+    transition: 0.5s;
+}
+
+.cover:hover {
+    .description {
+        display: flex;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .container {
+        width: 40%;
+        margin-top: 3rem;
+    }
+    .container:nth-child(1),
+    .container:nth-child(2) {
+        margin-top: unset !important;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .container {
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .container {
+        width: 80%;
+    }
+
+    .container:nth-child(2) {
+        margin-top: 3rem !important;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .container {
+        width: 100%;
+    }
+}

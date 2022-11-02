@@ -68,6 +68,7 @@ html {
     cursor: pointer;
     background: rgba(150, 150, 150, 0.3);
     box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.35);
+    text-decoration: none !important;
 }
 
 .BorderButton::after,
@@ -130,3 +131,8 @@ html {
 }
 
 /*border button */
+
+
+.buttonText{
+    padding: 1rem 2rem !important;
+}

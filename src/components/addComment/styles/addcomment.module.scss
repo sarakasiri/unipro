@@ -1,5 +1,3 @@
-@import url("../../../app/styles/font.css");
-
 .dialogTitle {
     text-align: center;
     font-size: Bold_Title !important;
@@ -18,12 +16,10 @@
 
 .dialogActions {
     flex-direction: row-reverse;
-    font-size: Content_Regular !important;
 }
 
 .dialogButton {
     color: #212121 !important;
-    font-size: Content_Regular !important;
 }
 
 .ratingBox{

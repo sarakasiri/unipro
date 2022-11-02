@@ -1,3 +1,5 @@
+@import url("./font.css");
+
 .App {
   text-align: center;
 }
@@ -43,7 +45,7 @@ body {
   overflow-x: hidden !important;
 }
 
-.css-1wkwmmc > .MuiGrid-item{
+.css-1wkwmmc > .MuiGrid-item {
   max-width: 100% !important;
 }
 
@@ -54,4 +56,56 @@ body {
 .css-zpcwqm-MuiStepConnector-root {
   right: calc(-50% + 20px) !important;
   left: calc(50% + 20px) !important;
+}
+
+.title-fantasy {
+  font-family: Bold_Title !important;
+  font-weight: bold !important;
+  color: #fefefe;
+}
+
+.title-normal {
+  font-family: Content_Normal !important;
+  font-weight: bold !important;
+  color: #fefefe;
+}
+
+.subtitle-normal {
+  font-family: Content_Normal !important;
+  font-weight: bold !important;
+  color: #fefefe;
+  margin-bottom: 0.5rem !important;
+  margin-top: 0.5rem !important;
+  font-size: 1.35rem !important;
+}
+
+.caption {
+  font-family: Content_Normal !important;
+  margin-bottom: 0.5rem;
+  color: #fefefe !important;
+}
+
+.item {
+  color: #fefefe !important;
+  text-decoration: none !important;
+  font-family: Content_Normal !important;
+  font-size: .95rem !important;
+}
+
+.link {
+  color: #fefefe !important;
+  text-decoration: none !important;
+  font-family: Content_Normal !important;
+}
+
+.silver-color{
+  color: #999999 !important;
+}
+
+.text-2{
+  font-size: 1rem !important;
+}
+
+.text-2-title{
+  font-size: 3rem !important;
 }

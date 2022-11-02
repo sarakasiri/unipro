@@ -75,7 +75,7 @@ const Navbar = () => {
                                 <ListItem key={index} disablePadding className={classes.listItemResponsive}>
                                     <ListItemButton>
                                         <ListItemText>
-                                            <Link className={classes.linkItemResponsive} to={page.link}>{page.title}</Link>
+                                            <Link className={`link ${classes.linkItemResponsive}`} to={page.link}>{page.title}</Link>
                                         </ListItemText>
                                     </ListItemButton>
                                 </ListItem>
@@ -84,7 +84,7 @@ const Navbar = () => {
                                 <ListItem key={index + pages.length} disablePadding className={classes.listItemResponsive}>
                                     <ListItemButton>
                                         <ListItemText>
-                                            <a className={classes.linkItemResponsive} href={page.link}>{page.title}</a>
+                                            <a className={`link ${classes.linkItemResponsive}`} href={page.link}>{page.title}</a>
                                         </ListItemText>
                                     </ListItemButton>
                                 </ListItem>
@@ -114,10 +114,10 @@ const Navbar = () => {
                 </div>
                 <Box className={classes.menuItemBox} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                     {pages.map((page, index) => (
-                        <Link key={index} className={classes.menuItemLink} to={page.link}>{page.title}</Link>
+                        <Link key={index} className={`link ${classes.menuItemLink}`} to={page.link}>{page.title}</Link>
                     ))}
                     {external.map((page, index) => (
-                        <a key={index + pages.length} className={classes.menuItemLink} href={page.link}>{page.title}</a>
+                        <a key={index + pages.length} className={`link ${classes.menuItemLink}`} href={page.link}>{page.title}</a>
                     ))}
                 </Box>
 

@@ -1,22 +1,20 @@
-@import url("../../../app/styles/font.css");
-
 .titleBox {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, 10%);
+    transform: translate(-50%, 20%);
 }
 
 .englishTitle {
     width: max-content;
-    line-height: 1;
+    line-height: 1 !important;
     text-transform: uppercase;
     font-weight: 900 !important;
     font-family: "Work Sans", sans-serif !important;
-    position: absolute;
-    font-size: 2.5rem;
+    position: absolute !important;
+    font-size: 2.6rem !important;
     left: 50%;
-    transform: translate(-50%, 30%);
+    transform: translate(-50%, 20%) !important;
     color: rgba(255, 255, 255, 0.1);
 }
 
@@ -24,7 +22,10 @@
     font-family: Bold_Title !important;
     color: #fefefe;
     width: max-content;
-    font-size: 1.9rem;
+    position: absolute !important;
+    left: 50%;
+    transform: translate(-50%, 50%) !important;
+    font-size: 1.9rem !important;
 }
 
 @media screen and (max-width: 600px) {

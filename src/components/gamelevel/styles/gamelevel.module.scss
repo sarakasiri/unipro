@@ -1,0 +1,57 @@
+.infoGame {
+    width: 30rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.infoGameSM{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top:1rem
+}
+
+.hardshipLevel,
+.fearLevel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    direction: rtl;
+}
+
+.levelIcon {
+    position: absolute;
+    width: 3.5rem;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.levelIconSM{
+    position: absolute;
+    width: 2.5rem;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 750px) {
+    .infoGame {
+        padding: 1rem;
+    }
+    .circleProgress {
+        width: 75px !important;
+        height: 75px !important;
+    }
+    .levelIcon {
+        width: 2.5rem;
+        top: 27.5%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .infoGame {
+        width: 100%;
+    }
+}
