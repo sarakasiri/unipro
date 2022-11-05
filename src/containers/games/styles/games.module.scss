@@ -47,9 +47,7 @@
 }
 
 .gameTitle .persianTitle2 {
-    font-size: 3rem;
-    margin-top: 5rem;
-    font-family: Content_Normal !important;
+    margin-top: 5rem !important;
 }
 
 .sectionBoxImage {
@@ -96,7 +94,7 @@
 .gameCoverSVG {
     position: absolute;
     top: 52.5%;
-    left: 25%;
+    left: 15rem;
     transform: translate(-50%, -50%);
 }
 
@@ -124,7 +122,6 @@
     position: relative;
     padding: 1rem 2rem 2rem 2rem;
     max-width: 30rem;
-    font-family: Content_Normal !important;
     text-align: justify;
     direction: rtl;
     font-size: 2.6rem;
@@ -135,34 +132,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.infoGame {
-    width: 30rem;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-.hardshipLevel,
-.fearLevel {
-    display: flex;
-    flex-direction: column;
-    font-family: Bold_Title !important;
-    position: relative;
-    direction: rtl;
-}
-
-.levelIcon {
-    position: absolute;
-    width: 3.5rem;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.levelPercent {
-    color: #fefefe;
 }
 
 @media screen and (max-width: 1150px) {
@@ -203,17 +172,6 @@
         left: 50%;
         transform: translate(-50%, 0%);
     }
-    .infoGame {
-        padding: 1rem;
-    }
-    .circleProgress {
-        width: 75px !important;
-        height: 75px !important;
-    }
-    .levelIcon {
-        width: 2.5rem;
-        top: 27.5%;
-    }
     .gameCoverSVG {
         width: 40rem;
         bottom: 48%;
@@ -238,9 +196,6 @@
     }
     .gameCoverSVG {
         width: 30rem;
-    }
-    .infoGame {
-        width: 100%;
     }
 }
 
@@ -300,7 +255,6 @@
     position: relative;
     padding: 1rem 2rem 2rem 2rem;
     min-width: 30rem;
-    font-family: Content_Normal !important;
     text-align: justify;
     direction: rtl;
     font-size: 2.6rem;
@@ -383,7 +337,7 @@
         right: unset;
         transform: translate(-50%, -50%);
     }
-    .location{
+    .location {
         padding: 1rem;
     }
 }
@@ -393,7 +347,7 @@
         min-width: unset;
         width: 70%;
     }
-    .location{
+    .location {
         min-width: 100%;
     }
 }

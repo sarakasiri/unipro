@@ -3,6 +3,7 @@ import React from 'react';
 import classes from './styles/usercomments.module.scss';
 
 import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
@@ -15,10 +16,12 @@ const UserComments = ({ star, name, message }) => {
             <div className={classes.userComment}>
                 <LazyLoadImage src={ghost_comment} className={classes.ghostComment} />
                 <Rating className={classes.ratingEl} size="small" readOnly precision={0.5} value={star} />
-                <h2 className={classes.commentName}>{name}</h2>
-                <span className={classes.commentMessage}>
+                <Typography variant='h4' className={`title-fantasy ${classes.commentName}`}>
+                    {name}
+                </Typography>
+                <Typography variant='caption' className={`caption ${classes.commentMessage}`}>
                     {message}
-                </span>
+                </Typography>
             </div>
         </>
     );

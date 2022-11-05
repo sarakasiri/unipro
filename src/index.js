@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://panel.legionescaperoom.ir/";
+axios.defaults.baseURL = "https://127.0.0.1:8000/";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -4,10 +4,10 @@ import classes from './styles/footer.module.scss';
 
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import Hidden from '@mui/material/Hidden';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import EmailRounded from '@mui/icons-material/EmailRounded';
@@ -57,6 +57,10 @@ const Footer = () => {
         try {
             await CallApi(AddNewsletter(formData.name, formData.email));
             openSnackeMessageHandler();
+            setFormData({
+                name: "",
+                email: "",
+            });
         } catch (error) {
             console.log(error);
         };
@@ -78,40 +82,44 @@ const Footer = () => {
             <Grid container direction="row-reverse" className={classes.footeerContainer}>
                 <Grid item xs={12} md={4} className={classes.footerItemBox}>
                     <div className={classes.menuBox}>
-                        <span className={classes.menuTitle}>
+                        <Typography variant='h6' className={`title-normal ${classes.menuTitle}`}>
                             منو
-                        </span>
+                        </Typography>
                         <ul className={classes.menuUl}>
                             <li className={classes.menuItem}>
-                                <Link className={classes.menuLink} to='/'>صفحه اصلی</Link>
+                                <Link className={`item ${classes.menuLink}`} to='/'>صفحه اصلی</Link>
                             </li>
                             <li className={classes.menuItem}>
-                                <Link className={classes.menuLink} to='/mirageGame'>بازی میراژ</Link>
+                                <Link className={`item ${classes.menuLink}`} to='/mirageGame'>بازی میراژ</Link>
                             </li>
                             <li className={classes.menuItem}>
-                                <Link className={classes.menuLink} to='/blog'>وبلاگ</Link>
+                                <Link className={`item ${classes.menuLink}`} to='/blog'>وبلاگ</Link>
                             </li>
                         </ul>
                     </div>
-                    <Divider orientation="horizontal" flexItem className={classes.horizontalDivider} />
                     <div className={classes.menuBox}>
-                        <span className={classes.menuTitle}>
+                        <Typography variant='h6' className={`title-normal ${classes.menuTitle}`}>
                             اطلاعات تماس
-                        </span>
+                        </Typography>
                         <ul className={classes.menuUl}>
                             <li className={classes.menuItem}>
-                                آدرس: تهران - چیتگر - بلوار کوهک - پلاک ۱۳
+                                <Typography variant='caption' className='item'>
+                                    آدرس: تهران - چیتگر - بلوار کوهک - پلاک ۱۳
+                                </Typography>
                             </li>
                             <li className={classes.menuItem}>
-                                شماره تماس: <span className={classes.regular}>09389669643 - 09378819116</span>
+                                <Typography variant='caption' className='item'>
+                                    شماره تماس: 09389669643 - 09378819116
+                                </Typography>
                             </li>
                             <li className={classes.menuItem}>
-                                اینستاگرام: <span className={classes.regular}>legionescaperoom</span>
+                                <Typography variant='caption' className='item'>
+                                    اینستاگرام: legionescaperoom
+                                </Typography>
                             </li>
                         </ul>
                     </div>
                 </Grid>
-                <Divider orientation="vertical" flexItem className={classes.divider} />
                 <Grid item xs={12} md={4} className={classes.footerItemBox}>
                     <div className={classes.magicBox}>
                         <div className={classes.ball}>
@@ -121,17 +129,16 @@ const Footer = () => {
                     </div>
                     <Hidden mdDown>
                         <div className={classes.copyrightBox}>
-                            <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لژیون اسکیپ میباشد</span>
-                            <span className={classes.englishText}>©2022-2023 LegionEscape. All Rights Reserved.</span>
+                            <Typography variant='caption' className='caption silver-color'>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لژیون اسکیپ میباشد</Typography>
+                            <Typography variant='caption' className='silver-color'>©2022-2023 LegionEscape. All Rights Reserved.</Typography>
                         </div>
                     </Hidden>
                 </Grid>
-                <Divider orientation="vertical" flexItem className={classes.divider} />
                 <Grid item xs={12} md={4} className={classes.footerItemBox}>
                     <div className={classes.newsletterBox}>
-                        <span className={classes.newsletterTitle}>
+                        <Typography variant='h6' className={`title-normal ${classes.menuTitle}`}>
                             ثبت نام در خبرنامه ایمیلی
-                        </span>
+                        </Typography>
                         <form className={classes.newsletterForm} autoComplete="off">
                             <CacheProvider value={cacheRtl}>
                                 <ThemeProvider theme={rtltheme}>
@@ -154,8 +161,8 @@ const Footer = () => {
                     </div>
                     <Hidden mdUp>
                         <div className={classes.copyrightBox}>
-                            <span className={classes.persianText}>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لژیون اسکیپ میباشد</span>
-                            <span className={classes.englishText}>©2022-2023 LegionEscape. All Rights Reserved.</span>
+                            <Typography variant='caption' className='caption silver-color'>تمامی حقوق مادی و معنوی این سایت متعلق به مجموعه لژیون اسکیپ میباشد</Typography>
+                            <Typography variant='caption' className='silver-color'>©2022-2023 LegionEscape. All Rights Reserved.</Typography>
                         </div>
                     </Hidden>
                 </Grid>

@@ -1,6 +1,6 @@
 import './styles/app.css';
 
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Games from '../containers/games/Games';
 import Home from '../containers/home/Home';
